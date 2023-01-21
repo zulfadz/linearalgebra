@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Configuration reference</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="canonical" href="https://zul.rocks/customize/config.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-52617120-7', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Linear Algebra Problem Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Linear Algebra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linalg/linear-map.html">
+   Linear maps, null space, range
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3_11.html">
+     Problem 1: Linear map takes zero vector to zero vector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D2.html">
+     Problem 2: The set of noninvertible operators which is not a subspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D3.html">
+     Problem 3: Invertible operator on
+     <span class="math notranslate nohighlight">
+      \(V\)
+     </span>
+     exists iff linear map from its subspace is injective
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D4.html">
+     Problem 4: Invertible operator with special property exists iff certain conditions on null spaces are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D5.html">
+     Problem 5: Invertible operator with special property exists iff certain conditions on range spaces are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D6.html">
+     Problem 6: Invertible operators with special properties exists iff certain conditions on null space dimensions are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3E14.html">
+     Problem 7:
+     <span class="math notranslate nohighlight">
+      \(\mathbb F^{\infty}/U\)
+     </span>
+     is infinite-dimensional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3E15.html">
+     Problem 8:
+     <span class="math notranslate nohighlight">
+      \(\text{dim } V/(\text{null } \phi) =1.\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://zul.rocks/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://zul.rocks//issues/new?title=Issue%20on%20page%20%2Fcustomize/config.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com//zul.rocks/edit/master/docs/customize/config.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/customize/config.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration-defaults">
+   Configuration defaults
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Configuration reference</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration-defaults">
+   Configuration defaults
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="configuration-reference">
+<h1>Configuration reference<a class="headerlink" href="#configuration-reference" title="Permalink to this headline">#</a></h1>
+<p>You can configure Jupyter Book with a <strong>YAML configuration file (<code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>)</strong>.
+This file controls a number of options and feature flags.</p>
+<p>This page is a reference for the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> structure along with default values for each option.
+For information about using and configuring specific features, see the <strong>Topic Guides</strong>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>YAML can be tricky when it comes to how it treats certain kinds of values. For example,
+when using strings in YAML it is usually fine to omit quotes around them. However,
+there are certain values that will be <em>converted</em> to boolean values if they do not have
+strings around them. For example, <code class="docutils literal notranslate"><span class="pre">false</span></code>, <code class="docutils literal notranslate"><span class="pre">true</span></code>, <code class="docutils literal notranslate"><span class="pre">off</span></code>, etc. In addition, pure
+numbers will be converted to <code class="docutils literal notranslate"><span class="pre">float</span></code> or <code class="docutils literal notranslate"><span class="pre">int</span></code> unless you put strings around them.</p>
+</div>
+<section id="configuration-defaults">
+<span id="config-defaults"></span><h2>Configuration defaults<a class="headerlink" href="#configuration-defaults" title="Permalink to this headline">#</a></h2>
+<p>Below is the full default configuration file.
+Anything you set in your own <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> will be merged into these defaults before they are used to configure the build.</p>
+<div class="full-width highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1">#######################################################################################</span><span class="w"></span>
+<span class="c1"># A default configuration that will be loaded for all jupyter books</span><span class="w"></span>
+<span class="c1"># Users are expected to override these values in their own `_config.yml` file.</span><span class="w"></span>
+<span class="c1"># This is also the &quot;master list&quot; of all allowed keys and values.</span><span class="w"></span>
+
+<span class="c1">#######################################################################################</span><span class="w"></span>
+<span class="c1"># Book settings</span><span class="w"></span>
+<span class="nt">title                       </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">My Jupyter Book</span><span class="w">  </span><span class="c1"># The title of the book. Will be placed in the left navbar.</span><span class="w"></span>
+<span class="nt">author                      </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The Jupyter Book community</span><span class="w">  </span><span class="c1"># The author of the book</span><span class="w"></span>
+<span class="nt">copyright                   </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;2022&quot;</span><span class="w">  </span><span class="c1"># Copyright year to be placed in the footer</span><span class="w"></span>
+<span class="nt">logo                        </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w">  </span><span class="c1"># A path to the book logo</span><span class="w"></span>
+<span class="c1"># Patterns to skip when building the book. Can be glob-style (e.g. &quot;*skip.ipynb&quot;)</span><span class="w"></span>
+<span class="nt">exclude_patterns            </span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">_build</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Thumbs.db</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">.DS_Store</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;**.ipynb_checkpoints&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="c1"># Auto-exclude files not in the toc</span><span class="w"></span>
+<span class="nt">only_build_toc_files        </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+
+<span class="c1">#######################################################################################</span><span class="w"></span>
+<span class="c1"># Execution settings</span><span class="w"></span>
+<span class="nt">execute</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">execute_notebooks         </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">auto</span><span class="w">  </span><span class="c1"># Whether to execute notebooks at build time. Must be one of (&quot;auto&quot;, &quot;force&quot;, &quot;cache&quot;, &quot;off&quot;)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cache                     </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w">    </span><span class="c1"># A path to the jupyter cache that will be used to store execution artifacts. Defaults to `_build/.jupyter_cache/`</span><span class="w"></span>
+<span class="w">  </span><span class="nt">exclude_patterns          </span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w">    </span><span class="c1"># A list of patterns to *skip* in execution (e.g. a notebook that takes a really long time)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">timeout                   </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w">    </span><span class="c1"># The maximum time (in seconds) each notebook cell is allowed to run.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">run_in_temp               </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># If `True`, then a temporary directory will be created and used as the command working directory (cwd),</span><span class="w"></span>
+<span class="w">                                    </span><span class="c1"># otherwise the notebook&#39;s parent directory will be the cwd.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">allow_errors              </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># If `False`, when a code cell raises an error the execution is stopped, otherwise all cells are always run.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">stderr_output             </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">show</span><span class="w">  </span><span class="c1"># One of &#39;show&#39;, &#39;remove&#39;, &#39;remove-warn&#39;, &#39;warn&#39;, &#39;error&#39;, &#39;severe&#39;</span><span class="w"></span>
+
+<span class="c1">#######################################################################################</span><span class="w"></span>
+<span class="c1"># Parse and render settings</span><span class="w"></span>
+<span class="nt">parse</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">myst_enable_extensions</span><span class="p">:</span><span class="w">  </span><span class="c1"># default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># - amsmath</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">colon_fence</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># - deflist</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dollarmath</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># - html_admonition</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># - html_image</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linkify</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># - replacements</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># - smartquotes</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">substitution</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">tasklist</span><span class="w"></span>
+<span class="w">  </span><span class="nt">myst_url_schemes</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">mailto</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">http</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">https</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># URI schemes that will be recognised as external URLs in Markdown links</span><span class="w"></span>
+<span class="w">  </span><span class="nt">myst_dmath_double_inline</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># Allow display math ($$) within an inline context</span><span class="w"></span>
+
+<span class="c1">#######################################################################################</span><span class="w"></span>
+<span class="c1"># HTML-specific settings</span><span class="w"></span>
+<span class="nt">html</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">favicon                   </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w">  </span><span class="c1"># A path to a favicon image</span><span class="w"></span>
+<span class="w">  </span><span class="nt">use_edit_page_button      </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># Whether to add an &quot;edit this page&quot; button to pages. If `true`, repository information in repository: must be filled in</span><span class="w"></span>
+<span class="w">  </span><span class="nt">use_repository_button     </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># Whether to add a link to your repository button</span><span class="w"></span>
+<span class="w">  </span><span class="nt">use_issues_button         </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># Whether to add an &quot;open an issue&quot; button</span><span class="w"></span>
+<span class="w">  </span><span class="nt">use_multitoc_numbering    </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">   </span><span class="c1"># Continuous numbering across parts/chapters</span><span class="w"></span>
+<span class="w">  </span><span class="nt">extra_navbar              </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Powered by &lt;a href=&quot;https://jupyterbook.org&quot;&gt;Jupyter Book&lt;/a&gt;</span><span class="w">  </span><span class="c1"># Will be displayed underneath the left navbar.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">extra_footer              </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w">  </span><span class="c1"># Will be displayed underneath the footer.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">google_analytics_id       </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w">  </span><span class="c1"># A GA id that can be used to track book views.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">home_page_in_navbar       </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w">  </span><span class="c1"># Whether to include your home page in the left Navigation Bar</span><span class="w"></span>
+<span class="w">  </span><span class="nt">baseurl                   </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w">  </span><span class="c1"># The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/</span><span class="w"></span>
+<span class="w">  </span><span class="nt">comments</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">hypothesis              </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">    </span><span class="nt">utterances              </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<span class="w">  </span><span class="nt">announcement              </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># A banner announcement at the top of the site.</span><span class="w"></span>
+
+<span class="c1">#######################################################################################</span><span class="w"></span>
+<span class="c1"># LaTeX-specific settings</span><span class="w"></span>
+<span class="nt">latex</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">latex_engine              </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdflatex</span><span class="w">  </span><span class="c1"># one of &#39;pdflatex&#39;, &#39;xelatex&#39; (recommended for unicode), &#39;luatex&#39;, &#39;platex&#39;, &#39;uplatex&#39;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">use_jupyterbook_latex     </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># use sphinx-jupyterbook-latex for pdf builds as default</span><span class="w"></span>
+
+<span class="c1">#######################################################################################</span><span class="w"></span>
+<span class="c1"># Launch button settings</span><span class="w"></span>
+<span class="nt">launch_buttons</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">notebook_interface        </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">classic</span><span class="w">  </span><span class="c1"># The interface interactive links will activate [&quot;classic&quot;, &quot;jupyterlab&quot;]</span><span class="w"></span>
+<span class="w">  </span><span class="nt">binderhub_url             </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://mybinder.org</span><span class="w">  </span><span class="c1"># The URL of the BinderHub (e.g., https://mybinder.org)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">jupyterhub_url            </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w">  </span><span class="c1"># The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">thebe                     </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">  </span><span class="c1"># Add a thebe button to pages (requires the repository to run on Binder)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">colab_url                 </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="c1"># The URL of Google Colab (https://colab.research.google.com)</span><span class="w"></span>
+
+<span class="nt">repository</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">url                       </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/executablebooks/jupyter-book</span><span class="w">  </span><span class="c1"># The URL to your book&#39;s repository</span><span class="w"></span>
+<span class="w">  </span><span class="nt">path_to_book              </span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="w">  </span><span class="c1"># A path to your book&#39;s folder, relative to the repository root.</span><span class="w"></span>
+<span class="w">  </span><span class="nt">branch                    </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w">  </span><span class="c1"># Which branch of the repository should be used when creating links</span><span class="w"></span>
+
+<span class="c1">#######################################################################################</span><span class="w"></span>
+<span class="c1"># Advanced and power-user settings</span><span class="w"></span>
+<span class="nt">sphinx</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">extra_extensions          </span><span class="p">:</span><span class="w">   </span><span class="c1"># A list of extra extensions to load by Sphinx (added to those already used by JB).</span><span class="w"></span>
+<span class="w">  </span><span class="nt">local_extensions          </span><span class="p">:</span><span class="w">   </span><span class="c1"># A list of local extensions to load by sphinx specified by &quot;name: path&quot; items</span><span class="w"></span>
+<span class="w">  </span><span class="nt">recursive_update          </span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"> </span><span class="c1"># A boolean indicating whether to overwrite the Sphinx config (true) or recursively update (false)</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config                    </span><span class="p">:</span><span class="w">   </span><span class="c1"># key-value pairs to directly over-ride the Sphinx configuration</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "None/None",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./customize"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zul-Fadzli Abu Bakar<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

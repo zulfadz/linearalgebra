@@ -1,0 +1,26 @@
+format: jb-book
+root: intro
+parts:
+- caption: Linear Algebra
+  chapters:
+  - file: linalg/linear-map
+    sections:
+    - file: linalg/3_11
+    - file: linalg/3D2
+    - file: linalg/3D3
+    - file: linalg/3D4
+    - file: linalg/3D5
+    - file: linalg/3D6
+    - file: linalg/3E14
+    - file: linalg/3E15
+
+ 
+
+
+
+
+
+
+  
+
+

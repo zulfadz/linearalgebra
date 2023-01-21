@@ -1,0 +1,30 @@
+---
+jupytext:
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
+(myst-content/proofs-algorithms)=
+# Problem 2: The set of noninvertible operators which is not a subspace
+
+```{admonition} Problem 2
+
+Suppose $V$ is finite dimensional and $\dim V>1$. Prove that the set of noninvertible operators on $V$ is not a subspace of linear maps from $V$ to $V$.
+
+```
+
+```{admonition} Solution
+:class: hint, dropdown
+
+Let $v_{1}, \cdots, v_{n}$ be the basis of $V$.
+
+
+```
+
+
+_Source: Axler (3rd edition):  Exercise 3D2._

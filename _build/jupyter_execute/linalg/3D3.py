@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# (myst-content/proofs-algorithms)=
+# # Problem 3: Invertible operator on $V$ exists iff linear map from its subspace is injective
+# 
+# ```{admonition} Problem 3
+# Suppose $V$ is finite-dimensional, $U$ is a subspace of $V$, and $S \in \mathcal{L}(U,V)$. Prove there exists an invertible operator $T \in \mathcal{L}(V)$ such that $Tu=Su$ for every $u\in U$ if and only if $S$ is injective.
+# 
+# ```
+# 
+# 
+# 
+# ```{admonition} Solution
+# :class: hint, dropdown
+# 
+# Todo
+# 
+# ```
+# 
+# 
+# _Source: Axler (3rd edition):  Exercise 3D3._

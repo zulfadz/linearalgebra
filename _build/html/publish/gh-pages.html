@@ -1,0 +1,766 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>GitHub Pages and Actions</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="canonical" href="https://zul.rocks/publish/gh-pages.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-52617120-7', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Linear Algebra Problem Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Linear Algebra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linalg/linear-map.html">
+   Linear maps, null space, range
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3_11.html">
+     Problem 1: Linear map takes zero vector to zero vector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D2.html">
+     Problem 2: The set of noninvertible operators which is not a subspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D3.html">
+     Problem 3: Invertible operator on
+     <span class="math notranslate nohighlight">
+      \(V\)
+     </span>
+     exists iff linear map from its subspace is injective
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D4.html">
+     Problem 4: Invertible operator with special property exists iff certain conditions on null spaces are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D5.html">
+     Problem 5: Invertible operator with special property exists iff certain conditions on range spaces are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D6.html">
+     Problem 6: Invertible operators with special properties exists iff certain conditions on null space dimensions are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3E14.html">
+     Problem 7:
+     <span class="math notranslate nohighlight">
+      \(\mathbb F^{\infty}/U\)
+     </span>
+     is infinite-dimensional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3E15.html">
+     Problem 8:
+     <span class="math notranslate nohighlight">
+      \(\text{dim } V/(\text{null } \phi) =1.\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://zul.rocks/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://zul.rocks//issues/new?title=Issue%20on%20page%20%2Fpublish/gh-pages.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com//zul.rocks/edit/master/docs/publish/gh-pages.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/publish/gh-pages.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manually-put-your-books-contents-online">
+   Manually put your book’s contents online
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#option-1-copy-and-paste-your-books-build-contents-into-a-new-folder">
+     (Option 1) Copy and paste your book’s
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       _build
+      </span>
+     </code>
+     contents into a new folder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#option-2-automatically-push-your-build-files-with-ghp-import">
+     (Option 2) Automatically push your build files with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ghp-import
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automatically-host-your-book-with-github-actions">
+   Automatically host your book with GitHub Actions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#github-pages-configuration">
+     GitHub Pages Configuration
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-a-custom-domain-with-github-pages">
+   Use a custom domain with GitHub Pages
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>GitHub Pages and Actions</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manually-put-your-books-contents-online">
+   Manually put your book’s contents online
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#option-1-copy-and-paste-your-books-build-contents-into-a-new-folder">
+     (Option 1) Copy and paste your book’s
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       _build
+      </span>
+     </code>
+     contents into a new folder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#option-2-automatically-push-your-build-files-with-ghp-import">
+     (Option 2) Automatically push your build files with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ghp-import
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#automatically-host-your-book-with-github-actions">
+   Automatically host your book with GitHub Actions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#github-pages-configuration">
+     GitHub Pages Configuration
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#use-a-custom-domain-with-github-pages">
+   Use a custom domain with GitHub Pages
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="github-pages-and-actions">
+<span id="publish-gh-pages"></span><h1>GitHub Pages and Actions<a class="headerlink" href="#github-pages-and-actions" title="Permalink to this headline">#</a></h1>
+<p>Once your content is on GitHub, you can easily host it as a <a class="reference external" href="https://docs.github.com/en/github/working-with-github-pages">GitHub Pages</a> website. This is a service where GitHub hosts your static files as if they were a standalone website.</p>
+<p>There are three ways you can quickly host your book with GitHub Pages:</p>
+<ul class="simple">
+<li><p>Copy/paste your book’s HTML to a <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder, or a <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch of your repository.</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> tool to automatically push your built documentation to a <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch.</p></li>
+<li><p>Use a GitHub Action to automatically build your book and update your website when you change the content.</p></li>
+</ul>
+<p>We’ll cover each option below.</p>
+<section id="manually-put-your-books-contents-online">
+<h2>Manually put your book’s contents online<a class="headerlink" href="#manually-put-your-books-contents-online" title="Permalink to this headline">#</a></h2>
+<p>In this case, you manually build your book’s files, and then push them to a GitHub repository in order to be hosted as a website.
+There are two ways to do so</p>
+<div class="warning admonition">
+<p class="admonition-title">Make sure these steps are done first</p>
+<p>Before you do any of the following, make sure that these two steps are completed:</p>
+<ol class="simple">
+<li><p>Build HTML for your book (see <a class="reference internal" href="../start/build.html"><span class="doc std std-doc">Build your book</span></a>).
+There should be a collection of HTML files in your book’s <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder.</p></li>
+<li><p>Configure your GitHub repository to serve a website via GitHub Pages at the location of your choice (either a branch or the <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder).
+See <a class="reference external" href="https://docs.github.com/en/github/working-with-github-pages">the GitHub Pages documentation</a> for more information.</p></li>
+</ol>
+</div>
+<section id="option-1-copy-and-paste-your-books-build-contents-into-a-new-folder">
+<h3>(Option 1) Copy and paste your book’s <code class="docutils literal notranslate"><span class="pre">_build</span></code> contents into a new folder<a class="headerlink" href="#option-1-copy-and-paste-your-books-build-contents-into-a-new-folder" title="Permalink to this headline">#</a></h3>
+<p>The simplest way to host your book online is to simply copy everything that is inside <code class="docutils literal notranslate"><span class="pre">_build</span></code> and put it in a location where GitHub Pages knows to look.
+There are two places we recommend:</p>
+<dl class="simple myst">
+<dt>In a separate branch</dt><dd><p>You can configure GitHub Pages to build any books that are in a branch that you specify.
+By default, this is <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>.</p>
+</dd>
+<dt>In a <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder of your main branch</dt><dd><p>If you’d like to keep your built book alongside your book’s source files, you may paste them into a <code class="docutils literal notranslate"><span class="pre">docs/</span></code> folder.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that copying all of your book’s build files into the same branch as your source files will cause your repository to become very large over time, especially if you have many images in your book.</p>
+</div>
+</dd>
+</dl>
+<p>In either case, follow these steps:</p>
+<ol class="simple">
+<li><p>Copy the contents of <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> directory into <code class="docutils literal notranslate"><span class="pre">docs</span></code> (or your other branch).</p></li>
+<li><p>Add a file called <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> alongside your book’s contents.
+This tells GitHub Pages to treat your files as a “static HTML website”.</p></li>
+<li><p>Push your changes to GitHub, and <a class="reference external" href="https://docs.github.com/en/github/working-with-github-pages">configure it to start hosting your documentation</a>.</p></li>
+</ol>
+</section>
+<section id="option-2-automatically-push-your-build-files-with-ghp-import">
+<h3>(Option 2) Automatically push your build files with <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code><a class="headerlink" href="#option-2-automatically-push-your-build-files-with-ghp-import" title="Permalink to this headline">#</a></h3>
+<p>The easiest way to use GitHub Pages with your built HTML is to use the <a class="reference external" href="https://github.com/davisp/ghp-import"><code class="docutils literal notranslate"><span class="pre">ghp-import</span></code></a> package. <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> is a lightweight Python package that makes it easy to push HTML content to a GitHub repository.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> works by copying <em>all</em> of the contents of your built book (i.e., the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder) to a branch of your repository called <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>, and pushes it to GitHub.
+The <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch will be created and populated automatically for you by <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code>.
+To use <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> to host your book online with GitHub Pages follow the steps below:</p>
+<ol>
+<li><p>Install <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install ghp-import
+</pre></div>
+</div>
+</li>
+<li><p>From the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch of your book’s root directory (which should contain the <code class="docutils literal notranslate"><span class="pre">_build/html</span></code> folder) call <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> and point it to your HTML files, like so:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ghp-import -n -p -f _build/html
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure that you included the <code class="docutils literal notranslate"><span class="pre">-n</span></code>. This adds a file called <code class="docutils literal notranslate"><span class="pre">.nojekyll</span></code> to the output of your book, which tells GitHub <em>not</em> to build your book with
+<a class="reference external" href="https://jekyllrb.com/">Jekyll</a>.</p>
+</div>
+<p>Typically after a few minutes your site should be viewable online at a url such as: <code class="docutils literal notranslate"><span class="pre">https://&lt;user&gt;.github.io/&lt;myonlinebook&gt;/</span></code>. If not, check your repository settings under <strong>Pages</strong> to ensure that the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch is configured as the build source for GitHub Pages and/or to find the url address GitHub is building for you.</p>
+<p>To update your online book, make changes to your book’s content on the <code class="docutils literal notranslate"><span class="pre">main</span></code> branch of your repository, re-build your book with <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">mybookname/</span></code> and then use <code class="docutils literal notranslate"><span class="pre">ghp-import</span> <span class="pre">-n</span> <span class="pre">-p</span> <span class="pre">-f</span> <span class="pre">mylocalbook/_build/html</span></code> as before to push the newly built HTML to the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note this warning from the <a class="reference external" href="https://github.com/davisp/ghp-import"><code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> GitHub repository</a>:</p>
+<p>“…<em><code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> will DESTROY your gh-pages branch… and assumes that the <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch is 100% derivative. You should never edit files in your <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch by hand if you’re using this script…</em>”</p>
+</div>
+</section>
+</section>
+<section id="automatically-host-your-book-with-github-actions">
+<span id="publish-gh-actions"></span><h2>Automatically host your book with GitHub Actions<a class="headerlink" href="#automatically-host-your-book-with-github-actions" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://docs.github.com/en/actions">GitHub Actions</a> is a tool that allows you to automate things on GitHub.
+It is used for a variety of things, such as testing, publishing packages and continuous integration.</p>
+<p>Note that if you’re not hosting your book on GitHub,
+or if you’d like another, user-friendly service to build it automatically,
+see the <a class="reference internal" href="netlify.html"><span class="doc std std-doc">guide to publishing your book on Netlify</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You should be familiar with GitHub Actions before using them
+to automatically host your Jupyter Books.
+<a class="reference external" href="https://help.github.com/en/actions">See the GitHub Actions documentation</a>
+for more information.</p>
+</div>
+<p>To build your book with GitHub Actions, you’ll need to create
+an action that does the following things:</p>
+<ul class="simple">
+<li><p>Activates when a <em>push</em> event happens on <code class="docutils literal notranslate"><span class="pre">master</span></code> (or whichever)
+branch has your latest book content.</p></li>
+<li><p>Installs Jupyter Book and any dependencies needed to build
+your book.</p></li>
+<li><p>Builds your book’s HTML.</p></li>
+<li><p>Uses a <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> action to upload that HTML to your <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch.</p></li>
+</ul>
+<p>For reference, <a class="reference external" href="https://github.com/executablebooks/github-action-demo">here is a sample repository</a>
+that builds a book with GitHub Actions.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you use Jupyter Book &gt;= <code class="docutils literal notranslate"><span class="pre">0.7.0</span></code>.
+To use the latest version, run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">jupyter-book</span></code>.</p>
+</div>
+</aside>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use the <a class="reference external" href="https://github.com/executablebooks/cookiecutter-jupyter-book">Jupyter Book cookiecutter</a> to quickly create a book template that already includes the GitHub Actions workflow file needed to automatically deploy your book to GitHub Pages:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book create --cookiecutter mybookpath/
+</pre></div>
+</div>
+<p>For more help, see the <a class="reference external" href="https://github.com/executablebooks/cookiecutter-jupyter-book">Jupyter Book cookiecutter GitHub repository</a>, or run:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book create --help
+</pre></div>
+</div>
+</div>
+<p>Here is a simple YAML configuration
+for a Github Action that will publish your book to a <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code> branch.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deploy-book</span><span class="w"></span>
+
+<span class="c1"># Only run this when the master branch changes</span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># If your git repository has the Jupyter Book within some-subfolder next to</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># unrelated files, you can make this run only if a file within that specific</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># folder has been modified.</span><span class="w"></span>
+<span class="w">    </span><span class="c1">#</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># paths:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># - some-subfolder/**</span><span class="w"></span>
+
+<span class="c1"># This job installs dependencies, builds the book, and pushes it to `gh-pages`</span><span class="w"></span>
+<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">deploy-book</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-latest</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v2</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1"># Install dependencies</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Python 3.8</span><span class="w"></span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-python@v2</span><span class="w"></span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">python-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.8</span><span class="w"></span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install dependencies</span><span class="w"></span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">        </span><span class="no">pip install -r requirements.txt</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1"># Build the book</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Build the book</span><span class="w"></span>
+<span class="w">      </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">        </span><span class="no">jupyter-book build .</span><span class="w"></span>
+
+<span class="w">    </span><span class="c1"># Push the book&#39;s HTML to github-pages</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GitHub Pages action</span><span class="w"></span>
+<span class="w">      </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">peaceiris/actions-gh-pages@v3.6.1</span><span class="w"></span>
+<span class="w">      </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">github_token</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ secrets.GITHUB_TOKEN }}</span><span class="w"></span>
+<span class="w">        </span><span class="nt">publish_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./_build/html</span><span class="w"></span>
+</pre></div>
+</div>
+<p>If you want to deploy your site to GitHub Pages at a User and Organization repository (<code class="docutils literal notranslate"><span class="pre">&lt;username&gt;.github.io</span></code>), check another example workflow and available options at the README of <a class="reference external" href="https://github.com/peaceiris/actions-gh-pages">peaceiris/actions-gh-pages</a>.</p>
+<section id="github-pages-configuration">
+<h3>GitHub Pages Configuration<a class="headerlink" href="#github-pages-configuration" title="Permalink to this headline">#</a></h3>
+<p>The settings for GitHub Pages must be configured to reflect the method used to build the docs.
+Access a project’s Pages settings at <code class="docutils literal notranslate"><span class="pre">Settings</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">Pages</span></code>.
+Set <code class="docutils literal notranslate"><span class="pre">Source</span></code> to <code class="docutils literal notranslate"><span class="pre">Deploy</span> <span class="pre">from</span> <span class="pre">a</span> <span class="pre">branch</span></code> and set <code class="docutils literal notranslate"><span class="pre">Branch</span></code> to <code class="docutils literal notranslate"><span class="pre">gh-pages</span></code>.
+The build location should be <code class="docutils literal notranslate"><span class="pre">/</span> <span class="pre">(root)</span></code> for each of the methods described here.
+However, you may choose to place the build files in <code class="docutils literal notranslate"><span class="pre">/docs</span></code> and configure Pages accordingly.</p>
+<p><img alt="Screen Shot 2022-10-20 at 7 15 30 PM" src="https://user-images.githubusercontent.com/13797903/197082656-bf5cbea4-1ff4-49dd-9d01-15cfe4aff67e.png" /></p>
+</section>
+</section>
+<section id="use-a-custom-domain-with-github-pages">
+<h2>Use a custom domain with GitHub Pages<a class="headerlink" href="#use-a-custom-domain-with-github-pages" title="Permalink to this headline">#</a></h2>
+<p>By default, GitHub Pages will host your book at a URL like <code class="docutils literal notranslate"><span class="pre">githubusername.github.io/yourbookname</span></code>.
+If instead you’d like to use a custom domain with your book, you’ll need to take an extra step in the instructions provided above.
+In both cases, you’ll need to manually add a <code class="docutils literal notranslate"><span class="pre">CNAME</span></code> file that indicates the custom URL for your book.
+To do so, follow these steps:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain">Follow the instructions for setting up a custom domain with your repository</a>.</p></li>
+<li><p>The result of this will generate a <code class="docutils literal notranslate"><span class="pre">CNAME</span></code> file in your repository’s filesystem.
+This is the file that tells GitHub pages where your site lives, but it will be <em>overwritten</em> if you build and push your book’s HTML a second time.</p></li>
+<li><p>Copy the contents of that CNAME file, and manually add the CNAME using either <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code> or the GitHub Action described above.</p>
+<ul>
+<li><p>For <code class="docutils literal notranslate"><span class="pre">ghp-import</span></code>, see <a class="reference external" href="https://github.com/c-w/ghp-import#usage">the CNAME flag instructions</a>.</p></li>
+<li><p>For the GitHub Action above, see <a class="reference external" href="https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-add-cname-file-cname">the CNAME configuration instructions</a>.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "None/None",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./publish"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zul-Fadzli Abu Bakar<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

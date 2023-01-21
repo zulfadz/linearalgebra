@@ -1,0 +1,806 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Command-line interface reference</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <link rel="canonical" href="https://zul.rocks/reference/cli.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-52617120-7', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Linear Algebra Problem Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Linear Algebra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linalg/linear-map.html">
+   Linear maps, null space, range
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3_11.html">
+     Problem 1: Linear map takes zero vector to zero vector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D2.html">
+     Problem 2: The set of noninvertible operators which is not a subspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D3.html">
+     Problem 3: Invertible operator on
+     <span class="math notranslate nohighlight">
+      \(V\)
+     </span>
+     exists iff linear map from its subspace is injective
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D4.html">
+     Problem 4: Invertible operator with special property exists iff certain conditions on null spaces are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D5.html">
+     Problem 5: Invertible operator with special property exists iff certain conditions on range spaces are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D6.html">
+     Problem 6: Invertible operators with special properties exists iff certain conditions on null space dimensions are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3E14.html">
+     Problem 7:
+     <span class="math notranslate nohighlight">
+      \(\mathbb F^{\infty}/U\)
+     </span>
+     is infinite-dimensional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3E15.html">
+     Problem 8:
+     <span class="math notranslate nohighlight">
+      \(\text{dim } V/(\text{null } \phi) =1.\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://zul.rocks/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://zul.rocks//issues/new?title=Issue%20on%20page%20%2Freference/cli.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com//zul.rocks/edit/master/docs/reference/cli.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/reference/cli.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-book">
+   jupyter-book
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-book-build">
+     build
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-book-clean">
+     clean
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-book-config">
+     config
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jupyter-book-config-sphinx">
+       sphinx
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-book-create">
+     create
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-book-myst">
+     myst
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jupyter-book-myst-init">
+       init
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Command-line interface reference</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#jupyter-book">
+   jupyter-book
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-book-build">
+     build
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-book-clean">
+     clean
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-book-config">
+     config
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jupyter-book-config-sphinx">
+       sphinx
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-book-create">
+     create
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#jupyter-book-myst">
+     myst
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#jupyter-book-myst-init">
+       init
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="command-line-interface-reference">
+<h1>Command-line interface reference<a class="headerlink" href="#command-line-interface-reference" title="Permalink to this headline">#</a></h1>
+<p>Jupyter Book comes with a command-line interface that makes it easy to
+build your books and run a few common functions. This page contains information
+on what you can do with the CLI.</p>
+<p>This page is a complete reference for the CLI. For newcomers who would like to
+get started with the Jupyter Book CLI, we recommend starting with <a class="reference internal" href="../start/overview.html"><span class="doc std std-doc">Overview</span></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may also use <code class="docutils literal notranslate"><span class="pre">jb</span></code> as shorthand for <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> in the command-line.
+For example: <code class="docutils literal notranslate"><span class="pre">jupyter-book</span> <span class="pre">build</span> <span class="pre">mybook/</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">jb</span> <span class="pre">build</span> <span class="pre">mybook/</span></code>.</p>
+</div>
+<p><strong>See below for the full command-line reference</strong></p>
+<section id="jupyter-book">
+<h2>jupyter-book<a class="headerlink" href="#jupyter-book" title="Permalink to this headline">#</a></h2>
+<p>Build and manage books with Jupyter.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter-book <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-version">
+<span class="sig-name descname"><span class="pre">--version</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-version" title="Permalink to this definition">#</a></dt>
+<dd><p>Show the version and exit.</p>
+</dd></dl>
+
+<section id="jupyter-book-build">
+<h3>build<a class="headerlink" href="#jupyter-book-build" title="Permalink to this headline">#</a></h3>
+<p>Convert your book’s or page’s content to HTML or a PDF.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter-book build <span class="o">[</span>OPTIONS<span class="o">]</span> PATH_SOURCE
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-path-output">
+<span class="sig-name descname"><span class="pre">--path-output</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;path_output&gt;</span></span><a class="headerlink" href="#cmdoption-jupyter-book-build-path-output" title="Permalink to this definition">#</a></dt>
+<dd><p>Path to the output artifacts</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-config">
+<span class="sig-name descname"><span class="pre">--config</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;config&gt;</span></span><a class="headerlink" href="#cmdoption-jupyter-book-build-config" title="Permalink to this definition">#</a></dt>
+<dd><p>Path to the YAML configuration file (default: PATH_SOURCE/_config.yml)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-toc">
+<span class="sig-name descname"><span class="pre">--toc</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;toc&gt;</span></span><a class="headerlink" href="#cmdoption-jupyter-book-build-toc" title="Permalink to this definition">#</a></dt>
+<dd><p>Path to the Table of Contents YAML file (default: PATH_SOURCE/_toc.yml)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-W">
+<span id="cmdoption-jupyter-book-build-w"></span><span id="cmdoption-jupyter-book-build-warningiserror"></span><span class="sig-name descname"><span class="pre">-W</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--warningiserror</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-build-W" title="Permalink to this definition">#</a></dt>
+<dd><p>Error on warnings.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-n">
+<span id="cmdoption-jupyter-book-build-nitpick"></span><span class="sig-name descname"><span class="pre">-n</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--nitpick</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-build-n" title="Permalink to this definition">#</a></dt>
+<dd><p>Run in nit-picky mode, to generates warnings for all missing references.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-keep-going">
+<span class="sig-name descname"><span class="pre">--keep-going</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-build-keep-going" title="Permalink to this definition">#</a></dt>
+<dd><p>With -W, do not stop the build on the first warning, instead error on build completion</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-all">
+<span class="sig-name descname"><span class="pre">--all</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-build-all" title="Permalink to this definition">#</a></dt>
+<dd><p>Re-build all pages. The default is to only re-build pages that are new/changed since the last run.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-builder">
+<span class="sig-name descname"><span class="pre">--builder</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;builder&gt;</span></span><a class="headerlink" href="#cmdoption-jupyter-book-build-builder" title="Permalink to this definition">#</a></dt>
+<dd><p>Which builder to use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Options</dt>
+<dd class="field-odd"><p>html | dirhtml | singlehtml | pdfhtml | latex | pdflatex | linkcheck | custom</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-custom-builder">
+<span class="sig-name descname"><span class="pre">--custom-builder</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;custom_builder&gt;</span></span><a class="headerlink" href="#cmdoption-jupyter-book-build-custom-builder" title="Permalink to this definition">#</a></dt>
+<dd><p>Specify alternative builder provided by Sphinx, including text and epub. This can only be used with –builder=custom. Valid options listed at <a class="reference external" href="https://www.sphinx-doc.org/en/master/man/sphinx-build.html">https://www.sphinx-doc.org/en/master/man/sphinx-build.html</a></p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-v">
+<span id="cmdoption-jupyter-book-build-verbose"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--verbose</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-build-v" title="Permalink to this definition">#</a></dt>
+<dd><p>increase verbosity (can be repeated)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-q">
+<span id="cmdoption-jupyter-book-build-quiet"></span><span class="sig-name descname"><span class="pre">-q</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--quiet</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-build-q" title="Permalink to this definition">#</a></dt>
+<dd><p>-q means no sphinx status, -qq also turns off warnings</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-individualpages">
+<span class="sig-name descname"><span class="pre">--individualpages</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-build-individualpages" title="Permalink to this definition">#</a></dt>
+<dd><p>[pdflatex] Enable build of PDF files for each individual page</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-build-arg-PATH_SOURCE">
+<span id="cmdoption-jupyter-book-build-arg-path-source"></span><span class="sig-name descname"><span class="pre">PATH_SOURCE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-build-arg-PATH_SOURCE" title="Permalink to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="jupyter-book-clean">
+<h3>clean<a class="headerlink" href="#jupyter-book-clean" title="Permalink to this headline">#</a></h3>
+<p>Empty the _build directory except jupyter_cache.
+If the all option has been flagged, it will remove the entire _build. If html/latex
+option is flagged, it will remove the html/latex subdirectories.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter-book clean <span class="o">[</span>OPTIONS<span class="o">]</span> PATH_BOOK
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-clean-a">
+<span id="cmdoption-jupyter-book-clean-all"></span><span class="sig-name descname"><span class="pre">-a</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--all</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-clean-a" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove build directory.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-clean-html">
+<span class="sig-name descname"><span class="pre">--html</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-clean-html" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove html directory.</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-clean-latex">
+<span class="sig-name descname"><span class="pre">--latex</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-clean-latex" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove latex directory.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-clean-arg-PATH_BOOK">
+<span id="cmdoption-jupyter-book-clean-arg-path-book"></span><span class="sig-name descname"><span class="pre">PATH_BOOK</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-clean-arg-PATH_BOOK" title="Permalink to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="jupyter-book-config">
+<h3>config<a class="headerlink" href="#jupyter-book-config" title="Permalink to this headline">#</a></h3>
+<p>Inspect your _config.yml file.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter-book config <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="jupyter-book-config-sphinx">
+<h4>sphinx<a class="headerlink" href="#jupyter-book-config-sphinx" title="Permalink to this headline">#</a></h4>
+<p>Generate a Sphinx conf.py representation of the build configuration.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter-book config sphinx <span class="o">[</span>OPTIONS<span class="o">]</span> PATH_SOURCE
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-config-sphinx-config">
+<span class="sig-name descname"><span class="pre">--config</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;config&gt;</span></span><a class="headerlink" href="#cmdoption-jupyter-book-config-sphinx-config" title="Permalink to this definition">#</a></dt>
+<dd><p>Path to the YAML configuration file (default: PATH_SOURCE/_config.yml)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-config-sphinx-toc">
+<span class="sig-name descname"><span class="pre">--toc</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;toc&gt;</span></span><a class="headerlink" href="#cmdoption-jupyter-book-config-sphinx-toc" title="Permalink to this definition">#</a></dt>
+<dd><p>Path to the Table of Contents YAML file (default: PATH_SOURCE/_toc.yml)</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-config-sphinx-arg-PATH_SOURCE">
+<span id="cmdoption-jupyter-book-config-sphinx-arg-path-source"></span><span class="sig-name descname"><span class="pre">PATH_SOURCE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-config-sphinx-arg-PATH_SOURCE" title="Permalink to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+</section>
+<section id="jupyter-book-create">
+<h3>create<a class="headerlink" href="#jupyter-book-create" title="Permalink to this headline">#</a></h3>
+<p>Create a Jupyter Book template that you can customize.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter-book create <span class="o">[</span>OPTIONS<span class="o">]</span> PATH_BOOK
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-create-cookiecutter">
+<span class="sig-name descname"><span class="pre">--cookiecutter</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-create-cookiecutter" title="Permalink to this definition">#</a></dt>
+<dd><p>Use cookiecutter to interactively create a Jupyter Book template.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-create-arg-PATH_BOOK">
+<span id="cmdoption-jupyter-book-create-arg-path-book"></span><span class="sig-name descname"><span class="pre">PATH_BOOK</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-create-arg-PATH_BOOK" title="Permalink to this definition">#</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</section>
+<section id="jupyter-book-myst">
+<h3>myst<a class="headerlink" href="#jupyter-book-myst" title="Permalink to this headline">#</a></h3>
+<p>Manipulate MyST markdown files.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter-book myst <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+</pre></div>
+</div>
+<section id="jupyter-book-myst-init">
+<h4>init<a class="headerlink" href="#jupyter-book-myst-init" title="Permalink to this headline">#</a></h4>
+<p>Add Jupytext metadata for your markdown file(s), with optional Kernel name.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter-book myst init <span class="o">[</span>OPTIONS<span class="o">]</span> <span class="o">[</span>PATH<span class="o">]</span>...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-myst-init-kernel">
+<span class="sig-name descname"><span class="pre">--kernel</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;kernel&gt;</span></span><a class="headerlink" href="#cmdoption-jupyter-book-myst-init-kernel" title="Permalink to this definition">#</a></dt>
+<dd><p>The name of the Jupyter kernel to attach to this markdown file.</p>
+</dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-jupyter-book-myst-init-arg-PATH">
+<span id="cmdoption-jupyter-book-myst-init-arg-path"></span><span class="sig-name descname"><span class="pre">PATH</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-jupyter-book-myst-init-arg-PATH" title="Permalink to this definition">#</a></dt>
+<dd><p>Optional argument(s)</p>
+</dd></dl>
+
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "None/None",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./reference"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zul-Fadzli Abu Bakar<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
