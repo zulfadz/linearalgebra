@@ -1,0 +1,876 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Advanced Sphinx usage</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-examples.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/tabs.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="canonical" href="https://zul.rocks/advanced/sphinx.html" />
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
+<script>
+                        window.ga = window.ga || function () {
+                            (ga.q = ga.q || []).push(arguments) };
+                        ga.l = +new Date;
+                        ga('create', 'UA-52617120-7', 'auto');
+                        ga('set', 'anonymizeIp', true);
+                        ga('send', 'pageview');
+                    </script>
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.jpg" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Linear Algebra Problem Book
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Linear Algebra
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../linalg/linear-map.html">
+   Linear maps, null space, range
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3_11.html">
+     Problem 1: Linear map takes zero vector to zero vector
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D2.html">
+     Problem 2: The set of noninvertible operators which is not a subspace
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D3.html">
+     Problem 3: Invertible operator on
+     <span class="math notranslate nohighlight">
+      \(V\)
+     </span>
+     exists iff linear map from its subspace is injective
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D4.html">
+     Problem 4: Invertible operator with special property exists iff certain conditions on null spaces are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D5.html">
+     Problem 5: Invertible operator with special property exists iff certain conditions on range spaces are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3D6.html">
+     Problem 6: Invertible operators with special properties exists iff certain conditions on null space dimensions are satisfied
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3E14.html">
+     Problem 7:
+     <span class="math notranslate nohighlight">
+      \(\mathbb F^{\infty}/U\)
+     </span>
+     is infinite-dimensional
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3E15.html">
+     Problem 8:
+     <span class="math notranslate nohighlight">
+      \(\text{dim } V/(\text{null } \phi) =1.\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://zul.rocks/"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://zul.rocks//issues/new?title=Issue%20on%20page%20%2Fadvanced/sphinx.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com//zul.rocks/edit/master/docs/advanced/sphinx.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Edit this page"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="headerbtn__text-container">suggest edit</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/advanced/sphinx.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#custom-sphinx-extensions">
+   Custom Sphinx extensions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example-sphinx-inline-tabs">
+     An example:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sphinx-inline-tabs
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-sphinx-extensions">
+     Local Sphinx Extensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manual-sphinx-configuration">
+   Manual Sphinx configuration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choose-a-custom-sphinx-theme">
+     Choose a custom Sphinx theme
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fine-control-of-parsing-and-execution">
+     Fine control of parsing and execution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-tex-macros">
+     Defining TeX macros
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enable-a-custom-sphinx-builder-from-the-cli">
+   Enable a custom Sphinx builder from the CLI
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Advanced Sphinx usage</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#custom-sphinx-extensions">
+   Custom Sphinx extensions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#an-example-sphinx-inline-tabs">
+     An example:
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       sphinx-inline-tabs
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#local-sphinx-extensions">
+     Local Sphinx Extensions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#manual-sphinx-configuration">
+   Manual Sphinx configuration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#choose-a-custom-sphinx-theme">
+     Choose a custom Sphinx theme
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fine-control-of-parsing-and-execution">
+     Fine control of parsing and execution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-tex-macros">
+     Defining TeX macros
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#enable-a-custom-sphinx-builder-from-the-cli">
+   Enable a custom Sphinx builder from the CLI
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="advanced-sphinx-usage">
+<span id="advanced-sphinx-config"></span><h1>Advanced Sphinx usage<a class="headerlink" href="#advanced-sphinx-usage" title="Permalink to this headline">#</a></h1>
+<p>Jupyter Book uses the excellent documentation tool <a class="reference external" href="http://www.sphinx-doc.org/">Sphinx</a>
+to build your book and manage citations, cross-references, and extensibility.</p>
+<p>While Jupyter Book comes pre-configured with several Sphinx extensions,
+power-users may wish to add their own extensions and configuration.
+This page describes how to do so.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Adding your own Sphinx configuration and extensions may cause Jupyter Book to behave
+unpredictably.
+Use at your own risk!</p>
+</div>
+<section id="custom-sphinx-extensions">
+<h2>Custom Sphinx extensions<a class="headerlink" href="#custom-sphinx-extensions" title="Permalink to this headline">#</a></h2>
+<p>To enable your own Sphinx extensions when building a Jupyter Book, use the following
+configuration in your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">extra_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">extension1</span><span class="w"></span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">extension2</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Any extensions that are listed will be appended to the list of Sphinx extensions at
+build time.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure that you have your extension installed on your machine, or Sphinx won’t know
+how to build the extensions.</p>
+</div>
+<section id="an-example-sphinx-inline-tabs">
+<h3>An example: <code class="docutils literal notranslate"><span class="pre">sphinx-inline-tabs</span></code><a class="headerlink" href="#an-example-sphinx-inline-tabs" title="Permalink to this headline">#</a></h3>
+<p>By default, Jupyter Book ships with <a class="reference internal" href="../content/components.html#components-tabs"><span class="std std-ref">tabs via <code class="docutils literal notranslate"><span class="pre">sphinx-design</span></code></span></a>.
+There are other packages for tabs in the Sphinx ecosystem with different functionality.
+One-such package is <a class="reference external" href="https://sphinx-inline-tabs.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">sphinx-inline-tabs</span></code></a>, which allows for <em>syncronized tabs</em> in case you’d like your tabs to shift across the page at the same time.</p>
+<p><code class="docutils literal notranslate"><span class="pre">sphinx-inline-tabs</span></code> is not included with Jupyter Book by default, but we can activate it with Jupyter Book like so:</p>
+<ul>
+<li><p><strong>Install <code class="docutils literal notranslate"><span class="pre">sphinx-inline-tabs</span></code></strong>. Here’s the command to do so:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install sphinx-inline-tabs
+</pre></div>
+</div>
+</li>
+<li><p><strong>Add <code class="docutils literal notranslate"><span class="pre">sphinx-inline-tabs</span></code> content to your book</strong>. Here’s an example with MyST Markdown:</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>First two tabs showing off defining a function.
+
+````{tab} Python
+<span class="sb">```python</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">return</span>
+<span class="sb">```</span>
+````
+````{tab} C++
+```c++
+int main(const int argc, const char **argv) {
+  return 0;
+}
+<span class="sb">```</span>
+<span class="sb">````</span>
+
+<span class="sb">Second two tabs showing off printing.</span>
+
+<span class="sb">````{tab} Python</span>
+<span class="sb">```python</span>
+<span class="sb">print(&quot;Hello World!&quot;)</span>
+<span class="sb">```</span>
+````
+
+````{tab} C++
+```c++
+<span class="gh">#include &lt;iostream&gt;</span>
+
+int main() {
+  std::cout &lt;&lt; &quot;Hello World!&quot; &lt;&lt; std::endl;
+}
+```
+````
+</pre></div>
+</div>
+</li>
+<li><p><strong>Activate <code class="docutils literal notranslate"><span class="pre">sphinx-inline-tabs</span></code> in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></strong>.
+<a class="reference external" href="https://sphinx-inline-tabs.readthedocs.io/en/latest/">The <code class="docutils literal notranslate"><span class="pre">sphinx-inline-tabs</span></code> documentation</a> says we activate it in Sphinx by adding <code class="docutils literal notranslate"><span class="pre">extensions</span> <span class="pre">=</span> <span class="pre">[&quot;sphinx_inline_tabs&quot;]</span></code>, so we’ll add it to our Jupyter Book like so:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">extra_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sphinx_inline_tabs</span><span class="w"></span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Now, Jupyter Book will know how to interpret the <code class="docutils literal notranslate"><span class="pre">{tab}</span></code> directive
+(and any other directives that <code class="docutils literal notranslate"><span class="pre">sphinx-inline-tabs</span></code> supports).</p>
+<p>For example, here is a rendered version of the tab code pasted above:</p>
+<p>First two tabs showing off defining a function.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--0-input--1" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--1">Python</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--0-input--2" name="tab-set--0" type="radio"><label class="tab-label" for="tab-set--0-input--2">C++</label><div class="tab-content docutils">
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">char</span><span class="w"> </span><span class="o">**</span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Second two tabs showing off printing.</p>
+<div class="tab-set docutils">
+<input checked="True" class="tab-input" id="tab-set--1-input--1" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--1">Python</label><div class="tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<input class="tab-input" id="tab-set--1-input--2" name="tab-set--1" type="radio"><label class="tab-label" for="tab-set--1-input--2">C++</label><div class="tab-content docutils">
+<div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Hello World!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="local-sphinx-extensions">
+<span id="config-sphinx-local-extensions"></span><h3>Local Sphinx Extensions<a class="headerlink" href="#local-sphinx-extensions" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://www.sphinx-doc.org/en/master/development/tutorials/helloworld.html#using-the-extension">Sphinx is able to use local extensions</a> by adding additional directories to the <a class="reference external" href="https://docs.python.org/3/using/cmdline.html#envvar-PYTHONPATH">Python path</a>. You can use local extensions by
+specifying them as <code class="docutils literal notranslate"><span class="pre">local_extensions</span></code> in the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code> file.</p>
+<p>To add a local extension that requires a path, use:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">local_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&lt;name&gt;</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;path&gt;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This will <strong>append to the list of extensions already loaded by Jupyter Book</strong> and update the <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> so
+the local extension can be found.</p>
+</section>
+</section>
+<section id="manual-sphinx-configuration">
+<span id="sphinx-configuration"></span><h2>Manual Sphinx configuration<a class="headerlink" href="#manual-sphinx-configuration" title="Permalink to this headline">#</a></h2>
+<p>You may also directly override the key-value pairs that Sphinx normally has
+you configure in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>. To do so, use the following section of <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">key1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">key2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value2</span><span class="w"></span>
+</pre></div>
+</div>
+<p>By default, any values in your <code class="docutils literal notranslate"><span class="pre">sphinx:</span> <span class="pre">config:</span></code> section will <strong>entirely replace</strong> the default configurations set by Jupyter Book.
+For example, if values are dictionaries, the whole dictionary will be replaced, not just the keys that you specify in <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>.</p>
+<p>Alternatively, you can override default configurations <em>recursively</em> with the <code class="docutils literal notranslate"><span class="pre">recursive_update</span></code> option in the <code class="docutils literal notranslate"><span class="pre">sphinx:</span></code> section.
+In this case, <em>only the values you specify</em> in <code class="docutils literal notranslate"><span class="pre">sphinx:</span> <span class="pre">config:</span></code> will overwrite their defaults, and the configuration you do not specify will remain.
+You can trigger this behavior like so:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">recursive_update</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># Sphinx Configuration options to be added recursively</span><span class="w"></span>
+</pre></div>
+</div>
+<p>This option defaults to <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you wish to inspect a <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> representation of the generated configuration,
+which Jupyter Book will pass to Sphinx, you can run from the command-line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jb config sphinx mybookname/
+</pre></div>
+</div>
+</div>
+<section id="choose-a-custom-sphinx-theme">
+<h3>Choose a custom Sphinx theme<a class="headerlink" href="#choose-a-custom-sphinx-theme" title="Permalink to this headline">#</a></h3>
+<p>Sphinx provides support for many different themes to control the look and feel of the output.
+Jupyter Book uses the <a class="reference external" href="https://sphinx-book-theme.readthedocs.io/">Sphinx Book Theme</a> by default, but it is possible to use <em>any</em> Sphinx theme for your Jupyter Book by directly configuring Sphinx.</p>
+<p>For example, if you wished to use the <a class="reference external" href="https://pydata-sphinx-theme.readthedocs.io/">PyData Sphinx Theme</a>, you could install the theme with:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install pydata-sphinx-theme
+</pre></div>
+</div>
+<p>and then configure your book like so:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">...</span><span class="w"></span>
+<span class="nt">sphinx</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">html_theme</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pydata_sphinx_theme</span><span class="w"></span>
+<span class="nn">...</span><span class="w"></span>
+</pre></div>
+</div>
+<p>When you build your book, the PyData theme will be used.
+In this case, you should <a class="reference external" href="https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/index.html">consult the PyData theme documentation</a> for information about how to configure it.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>While you may choose any theme, there is some Jupyter Book configuration that only works with the Sphinx Book Theme, so some functionality may not be present if you choose a custom theme.
+For example, the <a class="reference internal" href="../interactive/launchbuttons.html#launchbuttons-binder"><span class="std std-ref">Launch Buttons</span></a> are not supported in most Sphinx themes.</p>
+</div>
+</section>
+<section id="fine-control-of-parsing-and-execution">
+<h3>Fine control of parsing and execution<a class="headerlink" href="#fine-control-of-parsing-and-execution" title="Permalink to this headline">#</a></h3>
+<p>As discussed in <a class="reference internal" href="../explain/components.html#intro-jupyter-book-components"><span class="std std-ref">the components of Jupyter Book</span></a>, two of the main components of Jupyter Book are Sphinx extensions;
+MyST-Parser for Markdown parsing, and MyST-NB for notebook execution and output rendering.</p>
+<p>These two extensions are highly customizable <em>via</em> Sphinx configuration.
+Some of their configuration is already exposed in the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>, but you can also directly set configuration, see:</p>
+<ul class="simple">
+<li><p>the <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/configuration.html#sphinx-config-options" title="(in MyST Parser v0.18.1)"><span class="xref myst">MyST-Parser configuration options</span></a></p></li>
+<li><p>the <a class="reference external" href="https://myst-nb.readthedocs.io/en/latest/configuration.html#config-intro" title="(in MyST-NB)"><span class="xref myst">MyST-NB configuration options</span></a></p></li>
+</ul>
+</section>
+<section id="defining-tex-macros">
+<span id="sphinx-tex-macros"></span><h3>Defining TeX macros<a class="headerlink" href="#defining-tex-macros" title="Permalink to this headline">#</a></h3>
+<p>You can add LaTeX macros for the whole book by defining them under the <code class="docutils literal notranslate"><span class="pre">Macros</span></code> option of the <code class="docutils literal notranslate"><span class="pre">TeX</span></code> block. For example, the following two macros have been pre-defined in the Sphinx configuration</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">sphinx</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mathjax_config</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">tex</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="nt">macros</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;N&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;\\mathbb{N}&quot;</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;floor&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;\\lfloor#1\\rfloor&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;bmat&quot;</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;\\left[\\begin{array}&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="w">          </span><span class="s">&quot;emat&quot;</span><span class="w"> </span><span class="p p-Indicator">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;\\end{array}\\right]&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
+</pre></div>
+</div>
+<p>You can also define TeX macros for a specific file by introducing them at the beginning of the file under a <code class="docutils literal notranslate"><span class="pre">math</span></code> directive. For example</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{math}
+
+\newcommand\N{\mathbb{N}}
+\newcommand\floor[1]{\lfloor#1\rfloor}
+\newcommand{\bmat}{\left[\begin{array}}
+\newcommand{\emat}{\end{array}\right]}
+```
+</pre></div>
+</div>
+<p>The commands can be used inside a <code class="docutils literal notranslate"><span class="pre">math</span></code> directive, <code class="docutils literal notranslate"><span class="pre">$$</span></code>, or in-line <code class="docutils literal notranslate"><span class="pre">$</span></code>. For example,</p>
+<div class="highlight-md notranslate"><div class="highlight"><pre><span></span>$$
+A = \bmat{} 1 &amp; 1 \\ 2 &amp; 1\\ 3 &amp; 2 \emat{},\ b=\bmat{} 2\\ 3 \\ 4\emat{},\ \gamma = 0.5
+$$
+</pre></div>
+</div>
+<p>will be rendered as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \bmat{} 1 &amp; 1 \\ 2 &amp; 1\\ 3 &amp; 2 \emat{},\ b=\bmat{} 2\\ 3 \\ 4\emat{},\ \gamma = 0.5
+\end{split}\]</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-mathjax" title="(in MyST Parser v0.18.1)"><span class="xref myst">How MyST-Parser works with MathJax</span></a>,
+and the section on <a class="reference internal" href="../content/math.html#myst-content-math"><span class="std std-ref">math and equations</span></a>.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>To have “bare” LaTeX rendered in HTML, enable the <code class="docutils literal notranslate"><span class="pre">amsmath</span></code> extension in your <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parse</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">myst_enable_extensions</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># don&#39;t forget to list any other extensions you want enabled,</span><span class="w"></span>
+<span class="w">    </span><span class="c1"># including those that are enabled by default!</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">amsmath</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Then you can include:</p>
+<div class="highlight-latex notranslate"><div class="highlight"><pre><span></span><span class="k">\begin</span><span class="nb">{</span>equation<span class="nb">}</span>
+  <span class="k">\int</span><span class="nb">_</span>0<span class="nb">^</span><span class="k">\infty</span> <span class="k">\frac</span><span class="nb">{</span>x<span class="nb">^</span>3<span class="nb">}{</span>e<span class="nb">^</span>x-1<span class="nb">}</span><span class="k">\,</span>dx = <span class="k">\frac</span><span class="nb">{</span><span class="k">\pi</span><span class="nb">^</span>4<span class="nb">}{</span>15<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>equation<span class="nb">}</span>
+</pre></div>
+</div>
+<p>which renders as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-65b827eb-0a3e-4941-a4a3-1a1f631681d6">
+<span class="eqno">()<a class="headerlink" href="#equation-65b827eb-0a3e-4941-a4a3-1a1f631681d6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+  \int_0^\infty \frac{x^3}{e^x-1}\,dx = \frac{\pi^4}{15}
+\end{equation}\]</div>
+</div>
+</section>
+</section>
+<section id="enable-a-custom-sphinx-builder-from-the-cli">
+<h2>Enable a custom Sphinx builder from the CLI<a class="headerlink" href="#enable-a-custom-sphinx-builder-from-the-cli" title="Permalink to this headline">#</a></h2>
+<p>You can initiate builds for a custom builder using:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jb build &lt;project&gt; --builder<span class="o">=</span>custom --custom-builder<span class="o">=</span>&lt;builder-name&gt;
+</pre></div>
+</div>
+<p>Advanced <code class="docutils literal notranslate"><span class="pre">sphinx</span></code> users may find an extension that builds a different type of output from
+the Sphinx AST such as <a class="reference external" href="https://github.com/QuantEcon/sphinx-tojupyter">sphinx-tojupyter</a>
+which is an extension for building notebooks that only includes <code class="docutils literal notranslate"><span class="pre">basic</span></code> markdown.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><a class="reference external" href="https://github.com/QuantEcon/sphinx-tojupyter">sphinx-tojupyter</a> will be deprecated once
+<code class="docutils literal notranslate"><span class="pre">myst</span></code> syntax rendering support is available in jupyter notebooks.</p>
+</div>
+<p>You can enable the <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> builder by adding it to the <code class="docutils literal notranslate"><span class="pre">_config.yml</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sphinx</span><span class="p">:</span>
+  <span class="n">extra_extensions</span><span class="p">:</span> <span class="p">[</span><span class="n">sphinx_tojupyter</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>and using the <code class="docutils literal notranslate"><span class="pre">custom</span></code> option via <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jb build &lt;project&gt; --builder<span class="o">=</span>custom --custom-builder<span class="o">=</span>jupyter
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Developers:</strong> When using other output targets, the package will need to support specifying the
+<code class="docutils literal notranslate"><span class="pre">mime</span></code> type priority for <code class="docutils literal notranslate"><span class="pre">myst_nb</span></code> compatibility.</p>
+<p>See <a class="reference external" href="https://github.com/QuantEcon/sphinx-tojupyter/blob/ef85226e5e3e30903b62ddda24d8a32d36687944/sphinx_tojupyter/__init__.py#L124">this code</a> for
+further details</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "None/None",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./advanced"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Zul-Fadzli Abu Bakar<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
