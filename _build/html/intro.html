@@ -55,8 +55,6 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="canonical" href="https://zul.rocks/intro.html" />
@@ -264,19 +262,10 @@ title="Fullscreen mode"
   </span>
 
 </button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://zul.rocks/"
+<a href="https://zul.rocks/"
    class="headerbtn"
    data-toggle="tooltip"
-data-placement="left"
+data-placement="bottom"
 title="Source repository"
 >
   
@@ -284,48 +273,8 @@ title="Source repository"
 <span class="headerbtn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-<span class="headerbtn__text-container">repository</span>
+
 </a>
-
-      </li>
-      
-      <li>
-        <a href="https://zul.rocks//issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com//zul.rocks/edit/master/docs/intro.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Edit this page"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="headerbtn__text-container">suggest edit</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
 
 <div class="menu-dropdown menu-dropdown-download-buttons">
   <button class="headerbtn menu-dropdown__trigger"
@@ -417,10 +366,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#text-table-of-contents">
-   <span class="math notranslate nohighlight">
-    \(\text{Table of Contents}\)
-   </span>
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
   </a>
  </li>
 </ul>
@@ -448,10 +395,8 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#text-table-of-contents">
-   <span class="math notranslate nohighlight">
-    \(\text{Table of Contents}\)
-   </span>
+  <a class="reference internal nav-link" href="#table-of-contents">
+   Table of Contents
   </a>
  </li>
 </ul>
@@ -468,10 +413,10 @@ title="Print to PDF"
 <h1>Linear Algebra Problem Book<a class="headerlink" href="#linear-algebra-problem-book" title="Permalink to this headline">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
-<p>In around May 2021, after about 6 years graduating college and joining the corporate world, I found myself missing doing some math. I began picking up some textbooks and made it a habit of solving at least one exercise every week (often month). This book is part 1 of the collection of problems solved by <a class="reference external" href="https://zul.rocks/about">me</a>, focusing on linear algebra. Tentatively, part 2 will be on real analysis and part 3 on partial differential equations.</p>
+<p>In around May 2021, after about 6 years graduating college and joining the corporate world, I found myself missing doing some math. I began picking up some textbooks and made it a habit of solving at least one exercise every week (often month). This book is part <span class="math notranslate nohighlight">\(1\)</span> of the collection of problems solved by <a class="reference external" href="https://zul.rocks/about">me</a>, focusing on linear algebra. Tentatively, part <span class="math notranslate nohighlight">\(2\)</span> will be on real analysis and part <span class="math notranslate nohighlight">\(3\)</span> on partial differential equations.</p>
 </section>
-<section id="text-table-of-contents">
-<h2><span class="math notranslate nohighlight">\(\text{Table of Contents}\)</span><a class="headerlink" href="#text-table-of-contents" title="Permalink to this headline">#</a></h2>
+<section id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">#</a></h2>
 <div class="toctree-wrapper compound">
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Linear Algebra</span></p>
 <ul>
