@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# (myst-content/proofs-algorithms)=
+# # Problem 11: There exists $S \in \mathcal{L}(V/U,W)$ such that $T = S\circ\pi$ iff $U \subset \text{null }T$ 
+# 
+# ```{admonition} Problem 11
+# Suppose $T \in \mathcal{L}(V,W)$ and $U$ is a subspace of $V$. Let $\pi$ denote the quotient map from $V$ onto $V/U.$ Prove that there exists $S \in \mathcal{L}(V/U,W)$ such that $T = S\circ\pi$ if and only if $U \subset \text{null }T.$
+# ```
+# 
+# 
+# 
+# ```{admonition} Solution
+# :class: hint, dropdown
+# 
+# ![3E18](../images/3E18.pdf)
+# 
+# ```
+# 
+# 
+# _Source: Axler (3rd edition):  Exercise 3E18._

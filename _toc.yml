@@ -13,6 +13,22 @@ parts:
     - file: linalg/3D6
     - file: linalg/3E14
     - file: linalg/3E15
+    - file: linalg/3E16
+    - file: linalg/3E17
+    - file: linalg/3E18
+    - file: linalg/3E19
+    - file: linalg/3E20
+    - file: linalg/3F1
+    - file: linalg/3F2
+    - file: linalg/3F3
+    - file: linalg/3F4
+    - file: linalg/3F5_18
+    - file: linalg/3F6_19
+    - file: linalg/3F7_20
+    - file: linalg/3F8_21
+    - file: linalg/3F9_22
+    - file: linalg/3F10_23
+    - file: linalg/3F11_24
 
  
 

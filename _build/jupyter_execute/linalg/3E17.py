@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# (myst-content/proofs-algorithms)=
+# # Problem 10: Given finite dimensional $\text{dim }V/U$, there exists subspace $W$ such that $\text{dim }W=\text{dim }V/U$ and $V = U \oplus W$ 
+# 
+# ```{admonition} Problem 10
+# Suppose $U$ is a subspace of $V$ such that $\text{dim }V/U$ is finite-dimensional. Prove that there exists a subspace $W$ of $V$ such that $\text{dim }W=\text{dim }V/U$ and $V = U \oplus W.$ 
+# 
+# ```
+# 
+# 
+# 
+# ```{admonition} Solution
+# :class: hint, dropdown
+# 
+# ![3E17a](../images/3E17a.pdf)
+# ![3E17b](../images/3E17b.pdf)
+# ![3E17c](../images/3E17c.pdf)
+# ![3E17d](../images/3E17d.pdf)
+# ![3E17e](../images/3E17e.pdf)
+# ```
+# 
+# 
+# _Source: Axler (3rd edition):  Exercise 3E17._

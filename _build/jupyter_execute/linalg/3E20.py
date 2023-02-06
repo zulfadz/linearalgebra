@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# (myst-content/proofs-algorithms)=
+# # Problem 13: Application of problem 11
+# 
+# ```{admonition} Problem 13
+# Suppose $U$ is a subspace of $V.$ Define $\Gamma : \mathcal{L}(V/U,W) \rightarrow \mathcal{L}(V,W)$ by $\Gamma(S) = S\pi.$
+# 
+# - Show that $\Gamma$ is a linear map.
+# - Show that $\Gamma$ is injective.
+# - Show that range $\Gamma = \{ T \in \mathcal{L}(V,W): Tu = 0 \text{ for every } u \in U\}.$
+# 
+# ```
+# 
+# 
+# 
+# ```{admonition} Solution
+# :class: hint, dropdown
+# 
+# ![3E20a](../images/3E20a.pdf)
+# ![3E20b](../images/3E20b.pdf)
+# ![3E20c](../images/3E20c.pdf)
+# ```
+# 
+# 
+# _Source: Axler (3rd edition):  Exercise 3E20._

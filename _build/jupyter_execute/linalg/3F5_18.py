@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# (myst-content/proofs-algorithms)=
+# # Problem 18: $(V_{1} \times \cdots V_{m})^{\prime}$ and $V_{1}^{\prime} \times \cdots V_{m}^{\prime}$ are isomorphic 
+# 
+# ```{admonition} Problem 18
+# Suppose $V_{1}, \cdots, V_{m}$ are vector spaces. Prove that $(V_{1} \times \cdots V_{m})^{\prime}$ and $V_{1}^{\prime} \times \cdots V_{m}^{\prime}$ are isomorphic vector spaces.
+# ```
+# 
+# 
+# 
+# ```{admonition} Solution
+# :class: hint, dropdown
+# 
+# ![3F5a](../images/3F5a.pdf)
+# ![3F5b](../images/3F5b.pdf)
+# ![3F5c](../images/3F5c.pdf)
+# ![3F5d](../images/3F5d.pdf)
+# ![3F5e](../images/3F5e.pdf)
+# ```
+# 
+# 
+# _Source: Axler (3rd edition):  Exercise 3F5._
