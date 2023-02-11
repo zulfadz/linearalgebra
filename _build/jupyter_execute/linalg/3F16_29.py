@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# (myst-content/proofs-algorithms)=
+# # Problem 29: Isomorphism of $\mathcal{L}(V,W)$ onto $\mathcal{L} (W^{\prime}, V^{\prime})$
+# 
+# ```{admonition} Problem 29
+# Suppose $V$ and $W$ are finite-dimensional. Prove that the map that takes $T\in \mathcal{L}(V,W)$ to $T^{\prime} \in \mathcal{L} (W^{\prime}, V^{\prime})$ is an isomorphism of $\mathcal{L}(V,W)$ onto $\mathcal{L} (W^{\prime}, V^{\prime}).$
+# ```
+# 
+# 
+# 
+# ```{admonition} Solution
+# :class: hint, dropdown
+# 
+# ![3F16a](../images/3F16a.pdf)
+# ![3F16b](../images/3F16b.pdf)
+# ```
+# 
+# 
+# _Source: Axler (3rd edition):  Exercise 3F16._

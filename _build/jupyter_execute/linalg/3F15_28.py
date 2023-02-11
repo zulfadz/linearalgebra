@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# (myst-content/proofs-algorithms)=
+# # Problem 28: $T^{\prime}=0$ if and only if $T=0$
+# 
+# ```{admonition} Problem 28
+# Suppose $W$ is finite-dimensional and $T\in \mathcal{L}(V,W).$ Prove that $T^{\prime}=0$ if and only if $T=0.$
+# ```
+# 
+# 
+# 
+# ```{admonition} Solution
+# :class: hint, dropdown
+# 
+# ![3F15a](../images/3F15a.pdf)
+# ![3F15b](../images/3F15b.pdf)
+# ```
+# 
+# 
+# _Source: Axler (3rd edition):  Exercise 3F15._

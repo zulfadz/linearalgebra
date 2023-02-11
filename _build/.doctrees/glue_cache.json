@@ -1,15 +1,15 @@
 {
   "content/executable/output-insert": {
-    "cool_text": {
+    "boot_chi_notdisplayed": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "cool_text",
-          "mime_prefix": ""
+          "name": "boot_chi_notdisplayed",
+          "mime_prefix": "application/papermill.record/"
         }
       },
       "data": {
-        "text/plain": "'here is some text!'"
+        "application/papermill.record/text/plain": "3.014251090227077"
       }
     },
     "df_tbl": {
@@ -23,67 +23,6 @@
       "data": {
         "text/plain": "      first    second     third\n0  2.821028  3.407901  3.204541\n1  3.151463  3.205085  3.005229\n2  3.016484  2.908209  2.498641\n3  3.338642  2.699777  3.104762\n4  2.943809  2.880194  2.861995",
         "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>first</th>\n      <th>second</th>\n      <th>third</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>2.821028</td>\n      <td>3.407901</td>\n      <td>3.204541</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>3.151463</td>\n      <td>3.205085</td>\n      <td>3.005229</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>3.016484</td>\n      <td>2.908209</td>\n      <td>2.498641</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>3.338642</td>\n      <td>2.699777</td>\n      <td>3.104762</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>2.943809</td>\n      <td>2.880194</td>\n      <td>2.861995</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
-      }
-    },
-    "boot_chi_notdisplayed": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "boot_chi_notdisplayed",
-          "mime_prefix": "application/papermill.record/"
-        }
-      },
-      "data": {
-        "application/papermill.record/text/plain": "3.014251090227077"
-      }
-    },
-    "sym_eq": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "sym_eq",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "(sqrt(5)*I)**\\alpha*(1/2 - 2*sqrt(5)*I/5) + (-sqrt(5)*I)**\\alpha*(1/2 + 2*sqrt(5)*I/5)",
-        "text/latex": "$\\displaystyle \\left(\\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} - \\frac{2 \\sqrt{5} i}{5}\\right) + \\left(- \\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} + \\frac{2 \\sqrt{5} i}{5}\\right)$"
-      }
-    },
-    "boot_clo": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "boot_clo",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "2.9892698613851616"
-      }
-    },
-    "boot_mean": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "boot_mean",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "3.0017454682172042"
-      }
-    },
-    "boot_chi": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "boot_chi",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "3.014251090227077"
       }
     },
     "sorted_means_fig": {
@@ -117,19 +56,80 @@
         "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
         "application/papermill.record/image/png": null
       }
-    }
-  },
-  "reference/cheatsheet": {
-    "ns_mean": {
+    },
+    "sym_eq": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "ns_mean",
-          "mime_prefix": "application/papermill.record/"
+          "name": "sym_eq",
+          "mime_prefix": ""
         }
       },
       "data": {
-        "application/papermill.record/text/plain": "-0.04933642829826795"
+        "text/plain": "(sqrt(5)*I)**\\alpha*(1/2 - 2*sqrt(5)*I/5) + (-sqrt(5)*I)**\\alpha*(1/2 + 2*sqrt(5)*I/5)",
+        "text/latex": "$\\displaystyle \\left(\\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} - \\frac{2 \\sqrt{5} i}{5}\\right) + \\left(- \\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} + \\frac{2 \\sqrt{5} i}{5}\\right)$"
+      }
+    },
+    "boot_mean": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "boot_mean",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "3.0017454682172042"
+      }
+    },
+    "cool_text": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "cool_text",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "'here is some text!'"
+      }
+    },
+    "boot_chi": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "boot_chi",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "3.014251090227077"
+      }
+    },
+    "boot_clo": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "boot_clo",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "2.9892698613851616"
+      }
+    }
+  },
+  "reference/cheatsheet": {
+    "glued_text": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "glued_text",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "'here is some text!'"
       }
     },
     "glued_fig": {
@@ -148,16 +148,16 @@
         "application/papermill.record/image/png": null
       }
     },
-    "glued_text": {
+    "ns_mean": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "glued_text",
-          "mime_prefix": ""
+          "name": "ns_mean",
+          "mime_prefix": "application/papermill.record/"
         }
       },
       "data": {
-        "text/plain": "'here is some text!'"
+        "application/papermill.record/text/plain": "-0.04933642829826795"
       }
     },
     "example_eq": {
