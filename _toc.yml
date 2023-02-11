@@ -29,6 +29,12 @@ parts:
     - file: linalg/3F9_22
     - file: linalg/3F10_23
     - file: linalg/3F11_24
+    - file: linalg/3F12_25
+    - file: linalg/3F13_26
+    - file: linalg/3F14_27
+    - file: linalg/3F15_28
+    - file: linalg/3F16_29
+    - file: linalg/3F17_30
 
  
 
