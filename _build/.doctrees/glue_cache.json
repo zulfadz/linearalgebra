@@ -1,5 +1,58 @@
 {
   "content/executable/output-insert": {
+    "boot_fig": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "boot_fig",
+          "mime_prefix": "application/papermill.record/"
+        },
+        "filenames": {
+          "image/png": "/Users/zulfadzli/JupyterBook/LinAlg/jupyter-book/linearalgebra/_build/jupyter_execute/content/executable/output-insert_10_0.png"
+        }
+      },
+      "data": {
+        "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
+        "application/papermill.record/image/png": null
+      }
+    },
+    "boot_chi": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "boot_chi",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "3.0129078215867375"
+      }
+    },
+    "boot_chi_notdisplayed": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "boot_chi_notdisplayed",
+          "mime_prefix": "application/papermill.record/"
+        }
+      },
+      "data": {
+        "application/papermill.record/text/plain": "3.0129078215867375"
+      }
+    },
+    "sym_eq": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "sym_eq",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "(sqrt(5)*I)**\\alpha*(1/2 - 2*sqrt(5)*I/5) + (-sqrt(5)*I)**\\alpha*(1/2 + 2*sqrt(5)*I/5)",
+        "text/latex": "$\\displaystyle \\left(\\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} - \\frac{2 \\sqrt{5} i}{5}\\right) + \\left(- \\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} + \\frac{2 \\sqrt{5} i}{5}\\right)$"
+      }
+    },
     "boot_mean": {
       "output_type": "display_data",
       "metadata": {
@@ -9,7 +62,20 @@
         }
       },
       "data": {
-        "text/plain": "3.0017454682172042"
+        "text/plain": "3.000569520150715"
+      }
+    },
+    "df_tbl": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "df_tbl",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "      first    second     third\n0  3.077244  3.071787  3.537010\n1  3.070212  3.220345  3.209273\n2  2.672041  2.906855  2.540505\n3  3.309940  2.902535  2.546285\n4  2.710905  2.957855  2.621596",
+        "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>first</th>\n      <th>second</th>\n      <th>third</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>3.077244</td>\n      <td>3.071787</td>\n      <td>3.537010</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>3.070212</td>\n      <td>3.220345</td>\n      <td>3.209273</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>2.672041</td>\n      <td>2.906855</td>\n      <td>2.540505</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>3.309940</td>\n      <td>2.902535</td>\n      <td>2.546285</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>2.710905</td>\n      <td>2.957855</td>\n      <td>2.621596</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
       }
     },
     "sorted_means_fig": {
@@ -28,57 +94,16 @@
         "application/papermill.record/image/png": null
       }
     },
-    "boot_chi_notdisplayed": {
+    "boot_clo": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "boot_chi_notdisplayed",
-          "mime_prefix": "application/papermill.record/"
-        }
-      },
-      "data": {
-        "application/papermill.record/text/plain": "3.014251090227077"
-      }
-    },
-    "boot_fig": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "boot_fig",
-          "mime_prefix": "application/papermill.record/"
-        },
-        "filenames": {
-          "image/png": "/Users/zulfadzli/JupyterBook/LinAlg/jupyter-book/linearalgebra/_build/jupyter_execute/content/executable/output-insert_10_0.png"
-        }
-      },
-      "data": {
-        "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
-        "application/papermill.record/image/png": null
-      }
-    },
-    "sym_eq": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "sym_eq",
+          "name": "boot_clo",
           "mime_prefix": ""
         }
       },
       "data": {
-        "text/plain": "(sqrt(5)*I)**\\alpha*(1/2 - 2*sqrt(5)*I/5) + (-sqrt(5)*I)**\\alpha*(1/2 + 2*sqrt(5)*I/5)",
-        "text/latex": "$\\displaystyle \\left(\\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} - \\frac{2 \\sqrt{5} i}{5}\\right) + \\left(- \\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} + \\frac{2 \\sqrt{5} i}{5}\\right)$"
-      }
-    },
-    "boot_chi": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "boot_chi",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "3.014251090227077"
+        "text/plain": "2.987844129859166"
       }
     },
     "cool_text": {
@@ -92,47 +117,9 @@
       "data": {
         "text/plain": "'here is some text!'"
       }
-    },
-    "df_tbl": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "df_tbl",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "      first    second     third\n0  2.821028  3.407901  3.204541\n1  3.151463  3.205085  3.005229\n2  3.016484  2.908209  2.498641\n3  3.338642  2.699777  3.104762\n4  2.943809  2.880194  2.861995",
-        "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>first</th>\n      <th>second</th>\n      <th>third</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>2.821028</td>\n      <td>3.407901</td>\n      <td>3.204541</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>3.151463</td>\n      <td>3.205085</td>\n      <td>3.005229</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>3.016484</td>\n      <td>2.908209</td>\n      <td>2.498641</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>3.338642</td>\n      <td>2.699777</td>\n      <td>3.104762</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>2.943809</td>\n      <td>2.880194</td>\n      <td>2.861995</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
-      }
-    },
-    "boot_clo": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "boot_clo",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "2.9892698613851616"
-      }
     }
   },
   "reference/cheatsheet": {
-    "example_eq": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "example_eq",
-          "mime_prefix": "application/papermill.record/"
-        }
-      },
-      "data": {
-        "application/papermill.record/text/plain": "sqrt(x**2 + y**2)",
-        "application/papermill.record/text/latex": "$\\displaystyle \\sqrt{x^{2} + y^{2}}$"
-      }
-    },
     "ss_mean": {
       "output_type": "display_data",
       "metadata": {
@@ -142,31 +129,7 @@
         }
       },
       "data": {
-        "text/plain": "0.3535732399736645"
-      }
-    },
-    "glued_text": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "glued_text",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "'here is some text!'"
-      }
-    },
-    "ns_mean": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "ns_mean",
-          "mime_prefix": "application/papermill.record/"
-        }
-      },
-      "data": {
-        "application/papermill.record/text/plain": "-0.04933642829826795"
+        "text/plain": "0.5210204358488061"
       }
     },
     "glued_fig": {
@@ -183,6 +146,43 @@
       "data": {
         "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
         "application/papermill.record/image/png": null
+      }
+    },
+    "example_eq": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "example_eq",
+          "mime_prefix": "application/papermill.record/"
+        }
+      },
+      "data": {
+        "application/papermill.record/text/plain": "sqrt(x**2 + y**2)",
+        "application/papermill.record/text/latex": "$\\displaystyle \\sqrt{x^{2} + y^{2}}$"
+      }
+    },
+    "ns_mean": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "ns_mean",
+          "mime_prefix": "application/papermill.record/"
+        }
+      },
+      "data": {
+        "application/papermill.record/text/plain": "-0.14899870571222049"
+      }
+    },
+    "glued_text": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "glued_text",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "'here is some text!'"
       }
     }
   }
