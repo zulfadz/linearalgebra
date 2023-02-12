@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# (myst-content/proofs-algorithms)=
+# # Problem 33: Dimension of  the annihilator
+# 
+# ```{admonition} Problem 33
+# Suppose $V$ is finite-dimensional and $U$ is a subspace of $V.$ Then
+# 
+# $\text{dim }U+\text{dim }U^{0} = \text{dim }V.$
+# ```
+# 
+# 
+# 
+# ```{admonition} Solution
+# :class: hint, dropdown
+# 
+# ![3106a](../images/3106a.pdf)
+# ![3106b](../images/3106b.pdf)
+# ```
+# 
+# 
+# _Source: Axler (3rd edition):  Statement 3.106._

@@ -1,0 +1,21 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# (myst-content/proofs-algorithms)=
+# # Problem 37: $(U \cap W)^{0} = U^{0} + W^{0}$
+# 
+# ```{admonition} Problem 37
+# Suppose $V$ is finite-dimensional and $U$ and $W$ are subspaces of $V.$ Prove that $(U \cap W)^{0} = U^{0} + W^{0}.$
+# ```
+# 
+# 
+# 
+# ```{admonition} Solution
+# :class: hint, dropdown
+# 
+# ![3F23a](../images/3F23a.pdf)
+# ![3F23b](../images/3F23b.pdf)
+# ```
+# 
+# 
+# _Source: Axler (3rd edition):  Excercise 3F23._
