@@ -50,10 +50,7 @@ def highlight_max(s):
     is_max = s == s.max()
     return ['background-color: yellow' if v else '' for v in is_max]
 
-df.style.\
-    applymap(color_negative_red).\
-    apply(highlight_max).\
-    set_table_attributes('style="font-size: 10px"')
+df.style.    applymap(color_negative_red).    apply(highlight_max).    set_table_attributes('style="font-size: 10px"')
 
 
 # See the [Pandas Styling docs](https://pandas.pydata.org/pandas-docs/stable/user_guide/style.html) for more information about styling DataFrames, and check out the documentation of your library of choice to see if they support similar features.

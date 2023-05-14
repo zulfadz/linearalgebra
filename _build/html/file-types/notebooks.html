@@ -466,6 +466,11 @@ const thebe_selector_output = ".output, .cell_output"
      </span>
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3F32_38.html">
+     Problem 38: Invertible linear operator, and matrix of linear operator
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -719,7 +724,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x7fbc8a4f1d00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.pyplot._IonContext at 0x7fc3580fbca0&gt;
 </pre></div>
 </div>
 </div>
@@ -912,7 +917,7 @@ depend on an underlying Python kernel to work.</p>
             &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no&quot; /&gt;
             &lt;style&gt;
-                #map_b8ec7a5d5d7b6cec313e58451f02104b {
+                #map_00d89b233bab8e32071b3e6bc5add9af {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -926,14 +931,14 @@ depend on an underlying Python kernel to work.</p>
 &lt;body&gt;
 
 
-            &lt;div class=&quot;folium-map&quot; id=&quot;map_b8ec7a5d5d7b6cec313e58451f02104b&quot; &gt;&lt;/div&gt;
+            &lt;div class=&quot;folium-map&quot; id=&quot;map_00d89b233bab8e32071b3e6bc5add9af&quot; &gt;&lt;/div&gt;
 
 &lt;/body&gt;
 &lt;script&gt;
 
 
-            var map_b8ec7a5d5d7b6cec313e58451f02104b = L.map(
-                &quot;map_b8ec7a5d5d7b6cec313e58451f02104b&quot;,
+            var map_00d89b233bab8e32071b3e6bc5add9af = L.map(
+                &quot;map_00d89b233bab8e32071b3e6bc5add9af&quot;,
                 {
                     center: [45.372, -121.6972],
                     crs: L.CRS.EPSG3857,
@@ -947,88 +952,88 @@ depend on an underlying Python kernel to work.</p>
 
 
 
-            var tile_layer_cadf80448bf19b5f7e26dc2047b3e496 = L.tileLayer(
+            var tile_layer_778eeef0464476838429d06692184b99 = L.tileLayer(
                 &quot;https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg&quot;,
                 {&quot;attribution&quot;: &quot;Map tiles by \u003ca target=\&quot;_blank\&quot; href=\&quot;http://stamen.com\&quot;\u003eStamen Design\u003c/a\u003e, under \u003ca target=\&quot;_blank\&quot; href=\&quot;http://creativecommons.org/licenses/by/3.0\&quot;\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca target=\&quot;_blank\&quot; href=\&quot;http://openstreetmap.org\&quot;\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\&quot;_blank\&quot; href=\&quot;http://creativecommons.org/licenses/by-sa/3.0\&quot;\u003eCC BY SA\u003c/a\u003e.&quot;, &quot;detectRetina&quot;: false, &quot;maxNativeZoom&quot;: 18, &quot;maxZoom&quot;: 18, &quot;minZoom&quot;: 0, &quot;noWrap&quot;: false, &quot;opacity&quot;: 1, &quot;subdomains&quot;: &quot;abc&quot;, &quot;tms&quot;: false}
-            ).addTo(map_b8ec7a5d5d7b6cec313e58451f02104b);
+            ).addTo(map_00d89b233bab8e32071b3e6bc5add9af);
 
 
-            var marker_73716cecce4889f9c151c24543bf74a9 = L.marker(
+            var marker_b74a4b26183e87d4e99b3ec695bf5724 = L.marker(
                 [45.3288, -121.6625],
                 {}
-            ).addTo(map_b8ec7a5d5d7b6cec313e58451f02104b);
+            ).addTo(map_00d89b233bab8e32071b3e6bc5add9af);
 
 
-            var icon_6ae222edfc59a073e1f3e353b0cc4c92 = L.AwesomeMarkers.icon(
+            var icon_e1c51e692a571d38189eacef5685f68d = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;cloud&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;blue&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_73716cecce4889f9c151c24543bf74a9.setIcon(icon_6ae222edfc59a073e1f3e353b0cc4c92);
+            marker_b74a4b26183e87d4e99b3ec695bf5724.setIcon(icon_e1c51e692a571d38189eacef5685f68d);
 
 
-        var popup_75c5b626386dea93a57e39246a615fd4 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
-
-
-
-                var html_280500014b0fbcd9e491d7ee1489e476 = $(`&lt;div id=&quot;html_280500014b0fbcd9e491d7ee1489e476&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Mt. Hood Meadows&lt;/div&gt;`)[0];
-                popup_75c5b626386dea93a57e39246a615fd4.setContent(html_280500014b0fbcd9e491d7ee1489e476);
+        var popup_4bd282c438acd1fee43f6ef2d2b3ac65 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
 
 
 
-        marker_73716cecce4889f9c151c24543bf74a9.bindPopup(popup_75c5b626386dea93a57e39246a615fd4)
+                var html_7e7077033371592d875f4d9ed95cde1d = $(`&lt;div id=&quot;html_7e7077033371592d875f4d9ed95cde1d&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Mt. Hood Meadows&lt;/div&gt;`)[0];
+                popup_4bd282c438acd1fee43f6ef2d2b3ac65.setContent(html_7e7077033371592d875f4d9ed95cde1d);
+
+
+
+        marker_b74a4b26183e87d4e99b3ec695bf5724.bindPopup(popup_4bd282c438acd1fee43f6ef2d2b3ac65)
         ;
 
 
 
 
-            var marker_9b476f7326fff5a761582a536febd3c6 = L.marker(
+            var marker_8a94676d8555dd2c9653a344debd6fff = L.marker(
                 [45.3311, -121.7113],
                 {}
-            ).addTo(map_b8ec7a5d5d7b6cec313e58451f02104b);
+            ).addTo(map_00d89b233bab8e32071b3e6bc5add9af);
 
 
-            var icon_9a48bd24b70f23c5e0d25ad1f8ed0741 = L.AwesomeMarkers.icon(
+            var icon_2f6d91684aedafeb6eff82e62e2d88fa = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;green&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_9b476f7326fff5a761582a536febd3c6.setIcon(icon_9a48bd24b70f23c5e0d25ad1f8ed0741);
+            marker_8a94676d8555dd2c9653a344debd6fff.setIcon(icon_2f6d91684aedafeb6eff82e62e2d88fa);
 
 
-        var popup_89e445339373466d80b30a0aa45c13be = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
-
-
-
-                var html_62ba7e98844eb2864d1938767e4064de = $(`&lt;div id=&quot;html_62ba7e98844eb2864d1938767e4064de&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Timberline Lodge&lt;/div&gt;`)[0];
-                popup_89e445339373466d80b30a0aa45c13be.setContent(html_62ba7e98844eb2864d1938767e4064de);
+        var popup_8db1627d1fe74916e6eb168d618d9429 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
 
 
 
-        marker_9b476f7326fff5a761582a536febd3c6.bindPopup(popup_89e445339373466d80b30a0aa45c13be)
+                var html_6e3a634946a4f8ee14ec74ac1c37bda4 = $(`&lt;div id=&quot;html_6e3a634946a4f8ee14ec74ac1c37bda4&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Timberline Lodge&lt;/div&gt;`)[0];
+                popup_8db1627d1fe74916e6eb168d618d9429.setContent(html_6e3a634946a4f8ee14ec74ac1c37bda4);
+
+
+
+        marker_8a94676d8555dd2c9653a344debd6fff.bindPopup(popup_8db1627d1fe74916e6eb168d618d9429)
         ;
 
 
 
 
-            var marker_afc1398aa9f9a1fc246c1acc6ef8fe5b = L.marker(
+            var marker_e4b659bcdbdd3386956f77b0589465fd = L.marker(
                 [45.33, -121.6823],
                 {}
-            ).addTo(map_b8ec7a5d5d7b6cec313e58451f02104b);
+            ).addTo(map_00d89b233bab8e32071b3e6bc5add9af);
 
 
-            var icon_e8b650a90234ad57a6e9de91d2717c03 = L.AwesomeMarkers.icon(
+            var icon_7909acacb6b86bacecad2fb66e536e47 = L.AwesomeMarkers.icon(
                 {&quot;extraClasses&quot;: &quot;fa-rotate-0&quot;, &quot;icon&quot;: &quot;info-sign&quot;, &quot;iconColor&quot;: &quot;white&quot;, &quot;markerColor&quot;: &quot;red&quot;, &quot;prefix&quot;: &quot;glyphicon&quot;}
             );
-            marker_afc1398aa9f9a1fc246c1acc6ef8fe5b.setIcon(icon_e8b650a90234ad57a6e9de91d2717c03);
+            marker_e4b659bcdbdd3386956f77b0589465fd.setIcon(icon_7909acacb6b86bacecad2fb66e536e47);
 
 
-        var popup_765ab7e9fa7dfe06ffedf3e9b09743d8 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
-
-
-
-                var html_138e6638350242aedcb6eb1861f3f627 = $(`&lt;div id=&quot;html_138e6638350242aedcb6eb1861f3f627&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Some Other Location&lt;/div&gt;`)[0];
-                popup_765ab7e9fa7dfe06ffedf3e9b09743d8.setContent(html_138e6638350242aedcb6eb1861f3f627);
+        var popup_7ea17c7ff5a1a258e74f64da3954cec4 = L.popup({&quot;maxWidth&quot;: &quot;100%&quot;});
 
 
 
-        marker_afc1398aa9f9a1fc246c1acc6ef8fe5b.bindPopup(popup_765ab7e9fa7dfe06ffedf3e9b09743d8)
+                var html_ca553f870cb5c6f3cffd02d8ce774e6c = $(`&lt;div id=&quot;html_ca553f870cb5c6f3cffd02d8ce774e6c&quot; style=&quot;width: 100.0%; height: 100.0%;&quot;&gt;Some Other Location&lt;/div&gt;`)[0];
+                popup_7ea17c7ff5a1a258e74f64da3954cec4.setContent(html_ca553f870cb5c6f3cffd02d8ce774e6c);
+
+
+
+        marker_e4b659bcdbdd3386956f77b0589465fd.bindPopup(popup_7ea17c7ff5a1a258e74f64da3954cec4)
         ;
 
 
@@ -1057,21 +1062,16 @@ Options:
   --path-output TEXT              Path to the output artifacts
   --config TEXT                   Path to the YAML configuration file
                                   (default: PATH_SOURCE/_config.yml)
-
   --toc TEXT                      Path to the Table of Contents YAML file
                                   (default: PATH_SOURCE/_toc.yml)
-
   -W, --warningiserror            Error on warnings.
   -n, --nitpick                   Run in nit-picky mode, to generates warnings
                                   for all missing references.
-
   --keep-going                    With -W, do not stop the build on the first
                                   warning, instead error on build completion
-
   --all                           Re-build all pages. The default is to only
                                   re-build pages that are new/changed since
                                   the last run.
-
   --builder [html|dirhtml|singlehtml|pdfhtml|latex|pdflatex|linkcheck|custom]
                                   Which builder to use.
   --custom-builder TEXT           Specify alternative builder provided by
@@ -1079,14 +1079,11 @@ Options:
                                   only be used with --builder=custom. Valid
                                   options listed at https://www.sphinx-
                                   doc.org/en/master/man/sphinx-build.html
-
   -v, --verbose                   increase verbosity (can be repeated)
   -q, --quiet                     -q means no sphinx status, -qq also turns
                                   off warnings
-
   --individualpages               [pdflatex] Enable build of PDF files for
                                   each individual page
-
   -h, --help                      Show this message and exit.
 </pre></div>
 </div>
@@ -1103,7 +1100,7 @@ Options:
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">mp</span><span class="o">/</span><span class="n">k8prchjx5yv8qpg7r0nnzfz80000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_31368</span><span class="o">/</span><span class="mf">1151370313.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">this_will_error</span>
 
 <span class="ne">NameError</span>: name &#39;this_will_error&#39; is not defined

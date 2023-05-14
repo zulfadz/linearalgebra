@@ -466,6 +466,11 @@ const thebe_selector_output = ".output, .cell_output"
      </span>
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3F32_38.html">
+     Problem 38: Invertible linear operator, and matrix of linear operator
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -773,7 +778,7 @@ title="Print to PDF"
 <p><img alt="fishy" src="../_images/fun-fish.png" /></p>
 <p>This will correctly copy the image to the build folder and will render it in all output formats (HTML, TeX, etc).
 However, it is limited in the configuration that can be applied. For example, the image width cannot be set with this syntax.</p>
-<p>As discussed in <a class="reference internal" href="myst.html#content-myst-directives"><span class="std std-ref">this section</span></a>, MyST allows for directives such as <code class="docutils literal notranslate"><span class="pre">image</span></code> and <code class="docutils literal notranslate"><span class="pre">figure</span></code> to be used (see <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#rst-primer" title="(in Sphinx v6.2.0)"><span class="xref myst">the Sphinx documentation</span></a> for available options).</p>
+<p>As discussed in <a class="reference internal" href="myst.html#content-myst-directives"><span class="std std-ref">this section</span></a>, MyST allows for directives such as <code class="docutils literal notranslate"><span class="pre">image</span></code> and <code class="docutils literal notranslate"><span class="pre">figure</span></code> to be used (see <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html#rst-primer" title="(in Sphinx v7.1.0)"><span class="xref myst">the Sphinx documentation</span></a> for available options).</p>
 <p>As an example,</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>```{image} ../images/fun-fish.png
 :alt: fishy
@@ -816,7 +821,7 @@ Any other attributes will be ignored.</p>
 <span id="content-blocks-images-formats"></span><h3>Supported image formats<a class="headerlink" href="#supported-image-formats" title="Permalink to this headline">#</a></h3>
 <p>Standard rasterized image formats, such as <code class="docutils literal notranslate"><span class="pre">.png</span></code> and <code class="docutils literal notranslate"><span class="pre">jpg</span></code>, are supported for both HTML and LaTeX/PDF output formats.
 By contrast, vector formats such as <code class="docutils literal notranslate"><span class="pre">.svg</span></code>, <code class="docutils literal notranslate"><span class="pre">.pdf</span></code> and <code class="docutils literal notranslate"><span class="pre">.eps</span></code> are normally builder specific.
-See the <code class="docutils literal notranslate"><span class="pre">supported_image_types</span></code> specification for each Sphinx builder <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/builders/index.html#builders" title="(in Sphinx v6.2.0)"><span class="xref myst">here</span></a>.</p>
+See the <code class="docutils literal notranslate"><span class="pre">supported_image_types</span></code> specification for each Sphinx builder <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/builders/index.html#builders" title="(in Sphinx v7.1.0)"><span class="xref myst">here</span></a>.</p>
 <p>To support multiple builders, Jupyter Book allows you to use a <code class="docutils literal notranslate"><span class="pre">*</span></code> asterisk as the extension. For example, with the HTML</p>
 <div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;../images/fun-fish.*&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;fishy&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bg-primary mb-1&quot;</span> <span class="na">width</span><span class="o">=</span><span class="s">&quot;200px&quot;</span><span class="p">&gt;</span>
 </pre></div>
@@ -827,7 +832,7 @@ See the <code class="docutils literal notranslate"><span class="pre">supported_i
 <p>You can use a tool such as <a class="reference external" href="https://imagemagick.org">imagemagick</a>, to convert your images to multiple formats prior to building your book.</p>
 <p>Alternatively, you may wish to check out these Sphinx extensions:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/imgconverter.html#module-sphinx.ext.imgconverter" title="(in Sphinx v6.2.0)"><span class="xref myst">sphinx.ext.imgconverter</span></a></p></li>
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/imgconverter.html#module-sphinx.ext.imgconverter" title="(in Sphinx v7.1.0)"><span class="xref myst">sphinx.ext.imgconverter</span></a></p></li>
 <li><p><a class="reference external" href="https://github.com/missinglinkelectronics/sphinxcontrib-svg2pdfconverter">sphinxcontrib-svg2pdfconverter</a></p></li>
 </ul>
 </section>

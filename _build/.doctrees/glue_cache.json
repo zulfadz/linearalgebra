@@ -1,5 +1,17 @@
 {
   "content/executable/output-insert": {
+    "cool_text": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "cool_text",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "'here is some text!'"
+      }
+    },
     "boot_fig": {
       "output_type": "display_data",
       "metadata": {
@@ -16,43 +28,6 @@
         "application/papermill.record/image/png": null
       }
     },
-    "boot_chi": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "boot_chi",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "3.0129078215867375"
-      }
-    },
-    "boot_chi_notdisplayed": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "boot_chi_notdisplayed",
-          "mime_prefix": "application/papermill.record/"
-        }
-      },
-      "data": {
-        "application/papermill.record/text/plain": "3.0129078215867375"
-      }
-    },
-    "sym_eq": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "sym_eq",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "(sqrt(5)*I)**\\alpha*(1/2 - 2*sqrt(5)*I/5) + (-sqrt(5)*I)**\\alpha*(1/2 + 2*sqrt(5)*I/5)",
-        "text/latex": "$\\displaystyle \\left(\\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} - \\frac{2 \\sqrt{5} i}{5}\\right) + \\left(- \\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} + \\frac{2 \\sqrt{5} i}{5}\\right)$"
-      }
-    },
     "boot_mean": {
       "output_type": "display_data",
       "metadata": {
@@ -62,20 +37,7 @@
         }
       },
       "data": {
-        "text/plain": "3.000569520150715"
-      }
-    },
-    "df_tbl": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "df_tbl",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "      first    second     third\n0  3.077244  3.071787  3.537010\n1  3.070212  3.220345  3.209273\n2  2.672041  2.906855  2.540505\n3  3.309940  2.902535  2.546285\n4  2.710905  2.957855  2.621596",
-        "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>first</th>\n      <th>second</th>\n      <th>third</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>3.077244</td>\n      <td>3.071787</td>\n      <td>3.537010</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>3.070212</td>\n      <td>3.220345</td>\n      <td>3.209273</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>2.672041</td>\n      <td>2.906855</td>\n      <td>2.540505</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>3.309940</td>\n      <td>2.902535</td>\n      <td>2.546285</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>2.710905</td>\n      <td>2.957855</td>\n      <td>2.621596</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+        "text/plain": "3.0005363578051374"
       }
     },
     "sorted_means_fig": {
@@ -94,6 +56,19 @@
         "application/papermill.record/image/png": null
       }
     },
+    "df_tbl": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "df_tbl",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "      first    second     third\n0  3.350900  3.096397  2.875804\n1  2.993561  2.671038  2.982726\n2  3.472957  2.955403  2.839721\n3  2.994129  2.539808  3.280789\n4  3.127812  3.273357  2.850756",
+        "text/html": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>first</th>\n      <th>second</th>\n      <th>third</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>3.350900</td>\n      <td>3.096397</td>\n      <td>2.875804</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>2.993561</td>\n      <td>2.671038</td>\n      <td>2.982726</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>3.472957</td>\n      <td>2.955403</td>\n      <td>2.839721</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>2.994129</td>\n      <td>2.539808</td>\n      <td>3.280789</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>3.127812</td>\n      <td>3.273357</td>\n      <td>2.850756</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      }
+    },
     "boot_clo": {
       "output_type": "display_data",
       "metadata": {
@@ -103,19 +78,44 @@
         }
       },
       "data": {
-        "text/plain": "2.987844129859166"
+        "text/plain": "2.9883641537077845"
       }
     },
-    "cool_text": {
+    "boot_chi": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "cool_text",
+          "name": "boot_chi",
           "mime_prefix": ""
         }
       },
       "data": {
-        "text/plain": "'here is some text!'"
+        "text/plain": "3.012936696456138"
+      }
+    },
+    "sym_eq": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "sym_eq",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "(sqrt(5)*I)**\\alpha*(1/2 - 2*sqrt(5)*I/5) + (-sqrt(5)*I)**\\alpha*(1/2 + 2*sqrt(5)*I/5)",
+        "text/latex": "$\\displaystyle \\left(\\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} - \\frac{2 \\sqrt{5} i}{5}\\right) + \\left(- \\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} + \\frac{2 \\sqrt{5} i}{5}\\right)$"
+      }
+    },
+    "boot_chi_notdisplayed": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "boot_chi_notdisplayed",
+          "mime_prefix": "application/papermill.record/"
+        }
+      },
+      "data": {
+        "application/papermill.record/text/plain": "3.012936696456138"
       }
     }
   },
@@ -129,7 +129,19 @@
         }
       },
       "data": {
-        "text/plain": "0.5210204358488061"
+        "text/plain": "0.4306904932950891"
+      }
+    },
+    "ns_mean": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "ns_mean",
+          "mime_prefix": "application/papermill.record/"
+        }
+      },
+      "data": {
+        "application/papermill.record/text/plain": "0.03614218025447233"
       }
     },
     "glued_fig": {
@@ -148,6 +160,18 @@
         "application/papermill.record/image/png": null
       }
     },
+    "glued_text": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "glued_text",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "'here is some text!'"
+      }
+    },
     "example_eq": {
       "output_type": "display_data",
       "metadata": {
@@ -159,30 +183,6 @@
       "data": {
         "application/papermill.record/text/plain": "sqrt(x**2 + y**2)",
         "application/papermill.record/text/latex": "$\\displaystyle \\sqrt{x^{2} + y^{2}}$"
-      }
-    },
-    "ns_mean": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "ns_mean",
-          "mime_prefix": "application/papermill.record/"
-        }
-      },
-      "data": {
-        "application/papermill.record/text/plain": "-0.14899870571222049"
-      }
-    },
-    "glued_text": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "glued_text",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "'here is some text!'"
       }
     }
   }

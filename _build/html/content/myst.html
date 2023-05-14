@@ -466,6 +466,11 @@ const thebe_selector_output = ".output, .cell_output"
      </span>
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../linalg/3F32_38.html">
+     Problem 38: Invertible linear operator, and matrix of linear operator
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -790,7 +795,7 @@ CommonMark + Markdown extensions + Sphinx roles and directives</p>
 you’ll write in the same flavour of <strong>MyST Markdown</strong>. Jupyter Book will know how to parse both of them.</p>
 <p>This page contains a few pieces of information about MyST Markdown and how it relates to Jupyter Book.
 You can find much more information about this flavour of Markdown at
-<a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html#syntax-core" title="(in MyST Parser v0.18.1)"><span class="xref myst">the Myst Parser documentation</span></a>.</p>
+<a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/typography.html#syntax-core" title="(in MyST Parser v1.0.0)"><span class="xref myst">the Myst Parser documentation</span></a>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Want to use RMarkdown directly?</p>
 <p>See <a class="reference internal" href="../file-types/jupytext.html"><span class="doc std std-doc">Custom notebook formats and Jupytext</span></a></p>
@@ -826,7 +831,7 @@ Here is a note
 <p>Here is a note</p>
 </div>
 <p>being inserted in your built book.</p>
-<p>For more information on using directives, see the <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#syntax-directives" title="(in MyST Parser v0.18.1)"><span class="xref myst">MyST documentation</span></a>.</p>
+<p>For more information on using directives, see the <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#syntax-directives" title="(in MyST Parser v1.0.0)"><span class="xref myst">MyST documentation</span></a>.</p>
 <section id="more-arguments-and-metadata-in-directives">
 <span id="directive-arguments"></span><h4>More arguments and metadata in directives<a class="headerlink" href="#more-arguments-and-metadata-in-directives" title="Permalink to this headline">#</a></h4>
 <p>Many directives allow you to control their behaviour with extra pieces of
@@ -889,7 +894,7 @@ For example, the syntax <code class="docutils literal notranslate"><span class="
 not be parsed correctly if it spans more than one line. Progress towards supporting roles
 that span multiple lines can be tracked <a class="reference external" href="https://github.com/executablebooks/MyST-Parser/issues/269">by this issue</a></p>
 </div>
-<p>For more information on using roles, see the <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#syntax-roles" title="(in MyST Parser v0.18.1)"><span class="xref myst">MyST documentation</span></a>.</p>
+<p>For more information on using roles, see the <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#syntax-roles" title="(in MyST Parser v1.0.0)"><span class="xref myst">MyST documentation</span></a>.</p>
 </section>
 </section>
 <section id="what-roles-and-directives-are-available">
@@ -904,11 +909,11 @@ all syntax that Sphinx supports (think of it as a Markdown version of reStructur
 <p>If you search the internet (and the links below) for information about roles and directives,
 the documentation will generally be written with reStructuredText in mind. MyST Markdown
 is different from reStructuredText, but all of the functionality should be the same.
-See <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/intro.html#intro-get-started" title="(in MyST Parser v0.18.1)"><span class="xref myst">the MyST Sphinx parser documentation</span></a> for more information about the differences between MyST and rST.</p>
+See <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/intro.html#intro-get-started" title="(in MyST Parser v1.0.0)"><span class="xref myst">the MyST Sphinx parser documentation</span></a> for more information about the differences between MyST and rST.</p>
 </div>
 <p>For a list of directives that are available to you, there are three places to check:</p>
 <ol class="simple">
-<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html" title="(in Sphinx v6.2.0)"><span class="xref myst">The Sphinx directives page</span></a>
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html" title="(in Sphinx v7.1.0)"><span class="xref myst">The Sphinx directives page</span></a>
 has a list of directives that are available by default in Sphinx.</p></li>
 <li><p><a class="reference external" href="https://docutils.sourceforge.io/docs/ref/rst/directives.html">The reStructuredText directives page</a>
 has a list of directives in the Python “docutils” module.</p></li>
@@ -933,7 +938,7 @@ In this case, you can use the special <code class="docutils literal notranslate"
 </div>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>The MyST-Parser documentation on <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#syntax-directives-parsing" title="(in MyST Parser v0.18.1)"><span class="xref myst">how directives parse content</span></a>, and its use for <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/faq/index.html#howto-include-rst" title="(in MyST Parser v0.18.1)"><span class="xref myst">including rST files into a Markdown file</span></a>, and <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/faq/index.html#howto-autodoc" title="(in MyST Parser v0.18.1)"><span class="xref myst">using <code class="docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code> in Markdown files</span></a>.</p>
+<p>The MyST-Parser documentation on <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/roles-and-directives.html#syntax-directives-parsing" title="(in MyST Parser v1.0.0)"><span class="xref myst">how directives parse content</span></a>, and its use for <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/faq/index.html#howto-include-rst" title="(in MyST Parser v1.0.0)"><span class="xref myst">including rST files into a Markdown file</span></a>, and <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/faq/index.html#howto-autodoc" title="(in MyST Parser v1.0.0)"><span class="xref myst">using <code class="docutils literal notranslate"><span class="pre">sphinx.ext.autodoc</span></code> in Markdown files</span></a>.</p>
 </div>
 </section>
 <section id="nesting-content-blocks-in-markdown">
@@ -977,14 +982,14 @@ Here&#39;s my note!
 <p>In addition to roles and directives, there are numerous other kinds of syntax
 that MyST Markdown supports.
 MyST supports all syntax of CommonMark Markdown (the kind of Markdown that Jupyter notebooks use), as well as an extended syntax that is used for scientific publishing.</p>
-<p>The <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/intro.html#intro-get-started" title="(in MyST Parser v0.18.1)"><span class="xref myst">MyST-Parser</span></a> is the tool that Jupyter Book uses to allow you to write your book content in MyST.
+<p>The <a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/intro.html#intro-get-started" title="(in MyST Parser v1.0.0)"><span class="xref myst">MyST-Parser</span></a> is the tool that Jupyter Book uses to allow you to write your book content in MyST.
 It is also a good source of information about the MyST syntax.
 Here are some links you can use as a reference:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/reference.html#commonmark-block-tokens" title="(in MyST Parser v0.18.1)"><span class="xref myst">CommonMark block syntax</span></a></p></li>
-<li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/reference.html#extended-block-tokens" title="(in MyST Parser v0.18.1)"><span class="xref myst">Extended MyST block syntax in MyST</span></a></p></li>
-<li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/reference.html#commonmark-span-tokens" title="(in MyST Parser v0.18.1)"><span class="xref myst">CommonMark in-line syntax</span></a></p></li>
-<li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/reference.html#extended-span-tokens" title="(in MyST Parser v0.18.1)"><span class="xref myst">Extended in-line syntax in MyST</span></a></p></li>
+<li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/reference.html#commonmark-block-tokens" title="(in MyST Parser v1.0.0)"><span class="xref myst">CommonMark block syntax</span></a></p></li>
+<li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/reference.html#extended-block-tokens" title="(in MyST Parser v1.0.0)"><span class="xref myst">Extended MyST block syntax in MyST</span></a></p></li>
+<li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/reference.html#commonmark-span-tokens" title="(in MyST Parser v1.0.0)"><span class="xref myst">CommonMark in-line syntax</span></a></p></li>
+<li><p><a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/reference.html#extended-span-tokens" title="(in MyST Parser v1.0.0)"><span class="xref myst">Extended in-line syntax in MyST</span></a></p></li>
 </ul>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
