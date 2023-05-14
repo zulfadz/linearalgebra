@@ -468,6 +468,11 @@ const thebe_selector_output = ".output, .cell_output"
      </span>
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../linalg/3F32_38.html">
+     Problem 38: Invertible linear operator, and matrix of linear operator
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -927,13 +932,13 @@ to focus on the glueing part.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.000569520150715
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0005363578051374
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.987844129859166
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.9883641537077845
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0129078215867375
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.012936696456138
 </pre></div>
 </div>
 </div>
@@ -1012,33 +1017,33 @@ use the <code class="docutils literal notranslate"><span class="pre">display=Fal
   <tbody>
     <tr>
       <th>0</th>
-      <td>3.077244</td>
-      <td>3.071787</td>
-      <td>3.537010</td>
+      <td>3.350900</td>
+      <td>3.096397</td>
+      <td>2.875804</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3.070212</td>
-      <td>3.220345</td>
-      <td>3.209273</td>
+      <td>2.993561</td>
+      <td>2.671038</td>
+      <td>2.982726</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2.672041</td>
-      <td>2.906855</td>
-      <td>2.540505</td>
+      <td>3.472957</td>
+      <td>2.955403</td>
+      <td>2.839721</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3.309940</td>
-      <td>2.902535</td>
-      <td>2.546285</td>
+      <td>2.994129</td>
+      <td>2.539808</td>
+      <td>3.280789</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2.710905</td>
-      <td>2.957855</td>
-      <td>2.621596</td>
+      <td>3.127812</td>
+      <td>3.273357</td>
+      <td>2.850756</td>
     </tr>
   </tbody>
 </table>
@@ -1080,7 +1085,7 @@ Simply add this:</p>
 <div class="highlight-md notranslate"><div class="highlight"><pre><span></span>In-line text; {glue:}`boot_mean`, and a figure: {glue:}`boot_fig`.
 </pre></div>
 </div>
-<p>In-line text; <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">3.000569520150715</span></code></span>, and a figure: <span class="pasted-inline"><img alt="../../_images/output-insert_10_0.png" src="../../_images/output-insert_10_0.png" /></span>.</p>
+<p>In-line text; <span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">3.0005363578051374</span></code></span>, and a figure: <span class="pasted-inline"><img alt="../../_images/output-insert_10_0.png" src="../../_images/output-insert_10_0.png" /></span>.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>We recommend using wider, shorter figures when plotting in-line, with a ratio
@@ -1111,7 +1116,7 @@ For example, the following text:</p>
 </pre></div>
 </div>
 <p>Is rendered as:
-The mean of the bootstrapped distribution was <span class="pasted-text">3.000569520150715</span> (95% confidence interval <span class="pasted-text">2.987844129859166</span>/<span class="pasted-text">3.0129078215867375</span>)</p>
+The mean of the bootstrapped distribution was <span class="pasted-text">3.0005363578051374</span> (95% confidence interval <span class="pasted-text">2.9883641537077845</span>/<span class="pasted-text">3.012936696456138</span>)</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code class="docutils literal notranslate"><span class="pre">glue:text</span></code> only works with glued variables that contain a <code class="docutils literal notranslate"><span class="pre">text/plain</span></code> output.</p>
@@ -1189,33 +1194,33 @@ A caption for a pandas table.
   <tbody>
     <tr>
       <th>0</th>
-      <td>3.077244</td>
-      <td>3.071787</td>
-      <td>3.537010</td>
+      <td>3.350900</td>
+      <td>3.096397</td>
+      <td>2.875804</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>3.070212</td>
-      <td>3.220345</td>
-      <td>3.209273</td>
+      <td>2.993561</td>
+      <td>2.671038</td>
+      <td>2.982726</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2.672041</td>
-      <td>2.906855</td>
-      <td>2.540505</td>
+      <td>3.472957</td>
+      <td>2.955403</td>
+      <td>2.839721</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>3.309940</td>
-      <td>2.902535</td>
-      <td>2.546285</td>
+      <td>2.994129</td>
+      <td>2.539808</td>
+      <td>3.280789</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2.710905</td>
-      <td>2.957855</td>
-      <td>2.621596</td>
+      <td>3.127812</td>
+      <td>3.273357</td>
+      <td>2.850756</td>
     </tr>
   </tbody>
 </table>
@@ -1288,8 +1293,8 @@ that were generated in other cells or other notebooks. For example, the followin
 <tbody>
 <tr class="row-even"><td class="text-align:center"><p>histogram and raw text</p></td>
 <td class="text-align:center"><p><span class="pasted-inline"><img alt="../../_images/output-insert_10_0.png" src="../../_images/output-insert_10_0.png" /></span></p></td>
-<td><p><span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">3.000569520150715</span></code></span></p></td>
-<td><p><span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">2.987844129859166</span></code></span>-<span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">3.0129078215867375</span></code></span></p></td>
+<td><p><span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">3.0005363578051374</span></code></span></p></td>
+<td><p><span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">2.9883641537077845</span></code></span>-<span class="pasted-inline"><code class="output text_plain docutils literal notranslate"><span class="pre">3.012936696456138</span></code></span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>sorted means and formatted text</p></td>
 <td class="text-align:center"><p><span class="pasted-inline"><img alt="../../_images/output-insert_10_1.png" src="../../_images/output-insert_10_1.png" /></span></p></td>
