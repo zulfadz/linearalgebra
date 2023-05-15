@@ -29,6 +29,8 @@
 # 
 # ![3F32ba](../images/3F32ba.pdf)
 # ![3F32ab](../images/3F32ab.pdf)
+# ![3F32b](../images/3F32b.pdf)
+# ![3F32c](../images/3F32c.pdf)
 # ```
 # 
 # 

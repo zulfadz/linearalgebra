@@ -1,33 +1,5 @@
 {
   "content/executable/output-insert": {
-    "cool_text": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "cool_text",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "'here is some text!'"
-      }
-    },
-    "boot_fig": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "boot_fig",
-          "mime_prefix": "application/papermill.record/"
-        },
-        "filenames": {
-          "image/png": "/Users/zulfadzli/JupyterBook/LinAlg/jupyter-book/linearalgebra/_build/jupyter_execute/content/executable/output-insert_10_0.png"
-        }
-      },
-      "data": {
-        "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
-        "application/papermill.record/image/png": null
-      }
-    },
     "boot_mean": {
       "output_type": "display_data",
       "metadata": {
@@ -40,20 +12,41 @@
         "text/plain": "3.0005363578051374"
       }
     },
-    "sorted_means_fig": {
+    "boot_chi": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "sorted_means_fig",
-          "mime_prefix": "application/papermill.record/"
-        },
-        "filenames": {
-          "image/png": "/Users/zulfadzli/JupyterBook/LinAlg/jupyter-book/linearalgebra/_build/jupyter_execute/content/executable/output-insert_10_1.png"
+          "name": "boot_chi",
+          "mime_prefix": ""
         }
       },
       "data": {
-        "application/papermill.record/text/plain": "<Figure size 432x144 with 1 Axes>",
-        "application/papermill.record/image/png": null
+        "text/plain": "3.012936696456138"
+      }
+    },
+    "cool_text": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "cool_text",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "'here is some text!'"
+      }
+    },
+    "sym_eq": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "sym_eq",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "(sqrt(5)*I)**\\alpha*(1/2 - 2*sqrt(5)*I/5) + (-sqrt(5)*I)**\\alpha*(1/2 + 2*sqrt(5)*I/5)",
+        "text/latex": "$\\displaystyle \\left(\\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} - \\frac{2 \\sqrt{5} i}{5}\\right) + \\left(- \\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} + \\frac{2 \\sqrt{5} i}{5}\\right)$"
       }
     },
     "df_tbl": {
@@ -81,31 +74,6 @@
         "text/plain": "2.9883641537077845"
       }
     },
-    "boot_chi": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "boot_chi",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "3.012936696456138"
-      }
-    },
-    "sym_eq": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "sym_eq",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "(sqrt(5)*I)**\\alpha*(1/2 - 2*sqrt(5)*I/5) + (-sqrt(5)*I)**\\alpha*(1/2 + 2*sqrt(5)*I/5)",
-        "text/latex": "$\\displaystyle \\left(\\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} - \\frac{2 \\sqrt{5} i}{5}\\right) + \\left(- \\sqrt{5} i\\right)^{\\alpha} \\left(\\frac{1}{2} + \\frac{2 \\sqrt{5} i}{5}\\right)$"
-      }
-    },
     "boot_chi_notdisplayed": {
       "output_type": "display_data",
       "metadata": {
@@ -117,19 +85,64 @@
       "data": {
         "application/papermill.record/text/plain": "3.012936696456138"
       }
-    }
-  },
-  "reference/cheatsheet": {
-    "ss_mean": {
+    },
+    "sorted_means_fig": {
       "output_type": "display_data",
       "metadata": {
         "scrapbook": {
-          "name": "ss_mean",
+          "name": "sorted_means_fig",
+          "mime_prefix": "application/papermill.record/"
+        },
+        "filenames": {
+          "image/png": "/Users/zulfadzli/JupyterBook/LinAlg/jupyter-book/linearalgebra/_build/jupyter_execute/content/executable/output-insert_10_1.png"
+        }
+      },
+      "data": {
+        "application/papermill.record/text/plain": "<Figure size 432x144 with 1 Axes>",
+        "application/papermill.record/image/png": null
+      }
+    },
+    "boot_fig": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "boot_fig",
+          "mime_prefix": "application/papermill.record/"
+        },
+        "filenames": {
+          "image/png": "/Users/zulfadzli/JupyterBook/LinAlg/jupyter-book/linearalgebra/_build/jupyter_execute/content/executable/output-insert_10_0.png"
+        }
+      },
+      "data": {
+        "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
+        "application/papermill.record/image/png": null
+      }
+    }
+  },
+  "reference/cheatsheet": {
+    "example_eq": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "example_eq",
+          "mime_prefix": "application/papermill.record/"
+        }
+      },
+      "data": {
+        "application/papermill.record/text/plain": "sqrt(x**2 + y**2)",
+        "application/papermill.record/text/latex": "$\\displaystyle \\sqrt{x^{2} + y^{2}}$"
+      }
+    },
+    "glued_text": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "glued_text",
           "mime_prefix": ""
         }
       },
       "data": {
-        "text/plain": "0.4306904932950891"
+        "text/plain": "'here is some text!'"
       }
     },
     "ns_mean": {
@@ -142,6 +155,18 @@
       },
       "data": {
         "application/papermill.record/text/plain": "0.03614218025447233"
+      }
+    },
+    "ss_mean": {
+      "output_type": "display_data",
+      "metadata": {
+        "scrapbook": {
+          "name": "ss_mean",
+          "mime_prefix": ""
+        }
+      },
+      "data": {
+        "text/plain": "0.4306904932950891"
       }
     },
     "glued_fig": {
@@ -158,31 +183,6 @@
       "data": {
         "application/papermill.record/text/plain": "<Figure size 432x288 with 1 Axes>",
         "application/papermill.record/image/png": null
-      }
-    },
-    "glued_text": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "glued_text",
-          "mime_prefix": ""
-        }
-      },
-      "data": {
-        "text/plain": "'here is some text!'"
-      }
-    },
-    "example_eq": {
-      "output_type": "display_data",
-      "metadata": {
-        "scrapbook": {
-          "name": "example_eq",
-          "mime_prefix": "application/papermill.record/"
-        }
-      },
-      "data": {
-        "application/papermill.record/text/plain": "sqrt(x**2 + y**2)",
-        "application/papermill.record/text/latex": "$\\displaystyle \\sqrt{x^{2} + y^{2}}$"
       }
     }
   }
